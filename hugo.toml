@@ -20,6 +20,15 @@ defaultContentLanguageInSubdir = false
   ShowBreadCrumbs = true
   ShowPostNavLinks = true
   ShowCodeCopyButtons = true
+  ShowAllPagesInArchive = true
+
+[params.fuseOpts]
+  isCaseSensitive = false
+  shouldSort = true
+  threshold = 0.0
+  distance = 0
+  minMatchCharLength = 2
+  keys = ["title", "summary", "content"]
 
 [languages.en]
   label = "English"
