@@ -1,7 +1,7 @@
 +++
 title = "TechWadh हिन्दी टेस्ट पोस्ट"
 date = 2026-11-19T12:00:00+05:30
-draft = false
+draft = true
 translationKey = "dummy-test"
 robotsNoIndex = true
 +++
