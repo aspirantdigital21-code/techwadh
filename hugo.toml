@@ -1,6 +1,6 @@
 
-baseURL = "https://techwadh.pages.dev/"
-title = "techwadh"
+baseURL = "https://techwadh.in/"
+title = "TechWadh"
 theme = "PaperMod"
 enableRobotsTXT = true
 
@@ -26,7 +26,7 @@ defaultContentLanguageInSubdir = true
   locale = "en-IN"
   weight = 1
   contentDir = "content/en"
-  title = "techwadh"
+  title = "TechWadh"
 
   [[languages.en.menus.main]]
     name = "Home"
@@ -43,7 +43,7 @@ defaultContentLanguageInSubdir = true
   locale = "hi"
   weight = 2
   contentDir = "content/hi"
-  title = "techwadh"
+  title = "TechWadh"
 
   [[languages.hi.menus.main]]
     name = "होम"
