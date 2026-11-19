@@ -5,7 +5,7 @@ theme = "PaperMod"
 enableRobotsTXT = true
 
 defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true
+defaultContentLanguageInSubdir = false
 
 [pagination]
   pagerSize = 10
@@ -30,12 +30,12 @@ defaultContentLanguageInSubdir = true
 
   [[languages.en.menus.main]]
     name = "Home"
-    url = "/en/"
+    url = "/"
     weight = 1
 
   [[languages.en.menus.main]]
     name = "Search"
-    url = "/en/search/"
+    url = "/search/"
     weight = 2
 
 [languages.hi]
