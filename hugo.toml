@@ -1,0 +1,56 @@
+
+baseURL = "https://techwadh.pages.dev/"
+title = "techwadh"
+theme = "PaperMod"
+enableRobotsTXT = true
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+
+[pagination]
+  pagerSize = 10
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowToc = true
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+  ShowCodeCopyButtons = true
+
+[languages.en]
+  label = "English"
+  locale = "en-IN"
+  weight = 1
+  contentDir = "content/en"
+  title = "techwadh"
+
+  [[languages.en.menus.main]]
+    name = "Home"
+    url = "/en/"
+    weight = 1
+
+  [[languages.en.menus.main]]
+    name = "Search"
+    url = "/en/search/"
+    weight = 2
+
+[languages.hi]
+  label = "हिन्दी"
+  locale = "hi"
+  weight = 2
+  contentDir = "content/hi"
+  title = "techwadh"
+
+  [[languages.hi.menus.main]]
+    name = "होम"
+    url = "/hi/"
+    weight = 1
+
+  [[languages.hi.menus.main]]
+    name = "खोजें"
+    url = "/hi/search/"
+    weight = 2
