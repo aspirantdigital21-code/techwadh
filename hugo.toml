@@ -13,6 +13,9 @@ defaultContentLanguageInSubdir = false
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
+[permalinks]
+  posts = "/:slug/"
+
 [params]
   author = "TechWadh Editorial Team"
   defaultTheme = "auto"

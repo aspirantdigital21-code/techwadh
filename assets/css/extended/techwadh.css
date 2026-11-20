@@ -609,7 +609,7 @@ html {
 }
 
 /* ---------- TechWadh custom homepage sections ---------- */
-.tw-home{max-width:1120px;margin:0 auto;padding:28px 24px 64px}
+.tw-home{max-width:1120px;margin:0 auto;padding:8px 24px 20px}
 .tw-eyebrow{font-size:.72rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase;color:var(--tw-blue);margin:0 0 13px}
 .tw-hero{position:relative;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:28px;min-height:390px;padding:clamp(30px,5vw,64px);overflow:hidden;border:1px solid var(--tw-line);border-radius:28px;background:radial-gradient(circle at 82% 35%,rgba(37,99,235,.17),transparent 33%),linear-gradient(125deg,var(--entry),var(--tw-soft));box-shadow:var(--tw-shadow)}
 .tw-hero h1{max-width:650px;margin:0 0 18px;font-size:clamp(2.3rem,5vw,4.1rem);line-height:1.04;letter-spacing:-.06em}
@@ -627,7 +627,7 @@ html {
 .tw-orbit-two{width:290px;height:290px;transform:rotate(48deg) scaleY(.48)}
 .tw-float{position:absolute;z-index:3;padding:10px 14px;border:1px solid var(--tw-line);border-radius:12px;background:var(--entry);box-shadow:var(--tw-shadow);font-size:.75rem;font-weight:800;color:var(--primary)}
 .tw-float-top{top:18%;right:0}.tw-float-bottom{bottom:14%;left:0}
-.tw-section{margin:68px 0 0}
+.tw-section{margin:50px 0 0}
 .tw-section-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}
 .tw-section-heading .tw-eyebrow{margin-bottom:7px}
 .tw-section-heading h2{margin:0;font-size:clamp(1.7rem,3vw,2.25rem);letter-spacing:-.045em}
@@ -750,4 +750,188 @@ html {
 }
 @media (max-width: 760px) {
   .main { margin-top: 44px; }
+}
+/* Compact hero — keep restored header and footer intact */
+.tw-hero {
+  min-height: 0;
+  grid-template-columns: minmax(0, 1.12fr) minmax(260px, .88fr);
+  gap: clamp(20px, 3vw, 38px);
+  padding: clamp(30px, 4vw, 46px);
+}
+.tw-hero h1 {
+  max-width: 590px;
+  font-size: clamp(2.1rem, 3.8vw, 3.15rem);
+  line-height: 1.08;
+  letter-spacing: -.048em;
+}
+.tw-hero-art { min-height: 245px; }
+.tw-brand-mark {
+  width: min(100%, 340px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tw-brand-mark-svg { width: 100%; height: auto; }
+@media (max-width: 760px) {
+  .tw-hero { grid-template-columns: 1fr; gap: 5px; }
+  .tw-hero-art { min-height: 190px; }
+  .tw-brand-mark { width: min(100%, 285px); }
+}
+
+/* TechWadh — Final compact hero refinement */
+
+.tw-hero {
+  min-height: 0;
+  grid-template-columns: minmax(0, 1.12fr) minmax(230px, .88fr);
+  gap: clamp(18px, 2.6vw, 30px);
+  padding: clamp(27px, 3.4vw, 38px);
+}
+
+.tw-hero h1 {
+  max-width: 600px;
+  font-size: clamp(2rem, 3.45vw, 2.95rem);
+  line-height: 1.08;
+  letter-spacing: -.05em;
+  text-wrap: balance;
+  margin-bottom: 13px;
+}
+
+.tw-hero-description {
+  max-width: 590px;
+  font-size: .96rem;
+  line-height: 1.65;
+}
+
+.tw-hero-actions {
+  margin-top: 18px;
+}
+
+.tw-hero-art {
+  min-height: 0;
+  display: grid;
+  place-items: center;
+}
+
+.tw-brand-mark {
+  width: min(100%, 270px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.tw-brand-tile {
+  width: 142px;
+  height: 142px;
+  display: grid;
+  place-items: center;
+  border-radius: 34px;
+  background: linear-gradient(
+    135deg,
+    #315efb 0%,
+    #7955e8 55%,
+    #4a9be8 100%
+  );
+  box-shadow: 0 18px 38px rgba(49, 94, 251, .25);
+  color: #fff;
+}
+
+.tw-brand-tile span {
+  font-size: 3.25rem;
+  line-height: 1;
+  font-weight: 950;
+  letter-spacing: -.09em;
+}
+
+.tw-brand-wordmark {
+  margin-top: 4px;
+  color: var(--primary);
+  font-size: .88rem;
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: .24em;
+  text-align: center;
+}
+
+.tw-brand-caption {
+  max-width: 100%;
+  color: var(--secondary);
+  font-size: .58rem;
+  line-height: 1.35;
+  font-weight: 750;
+  letter-spacing: .075em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .tw-hero {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 25px 21px 22px;
+  }
+
+  .tw-hero h1 {
+    max-width: 100%;
+    font-size: clamp(1.95rem, 7vw, 2.65rem);
+  }
+
+  .tw-hero-description {
+    font-size: .93rem;
+  }
+
+  .tw-hero-art {
+    padding-top: 4px;
+  }
+
+  .tw-brand-mark {
+    width: min(100%, 230px);
+  }
+
+  .tw-brand-tile {
+    width: 112px;
+    height: 112px;
+    border-radius: 28px;
+  }
+
+  .tw-brand-tile span {
+    font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .tw-hero {
+    padding: 23px 18px 20px;
+  }
+
+  .tw-hero .tw-eyebrow {
+    font-size: .58rem;
+    letter-spacing: .085em;
+  }
+
+  .tw-brand-caption {
+    font-size: .52rem;
+    letter-spacing: .045em;
+  }
+}
+.tw-title-blue {
+  display: inline-block;
+  padding: 0 0.06em;
+  margin: 0 -0.06em;
+  background: linear-gradient(
+    100deg,
+    #315efb 0%,
+    #7955e8 55%,
+    #4a9be8 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.tw-tagline {
+  font-weight: 750;
+  margin-left: 8px;
 }

@@ -1,17 +1,33 @@
+
 {{- define "main" -}}
 <main class="tw-home">
   {{- $homeInfo := site.Params.homeInfoParams }}
-  {{- $heroTitle := "Technology, made clear." }}
-  {{- $heroDescription := "The World. Explained for the Next Generation. Explore practical guides, useful technology updates and ideas that make the digital world easier to understand." }}
+  {{- $heroTitle := "TechWadh : Where Native Roots Meet Modern Tech" }}
+  {{- $heroDescription := "Born from the roots of Patwadh Kautuk, Techwadh brings together practical technology insights, useful digital tools, and thoughtful builds, crafted simply and clearly for everyday use." }}
   {{- if eq site.Language.Lang "hi" }}
-    {{- $heroTitle = "तकनीक को आसान भाषा में समझें।" }}
-    {{- $heroDescription = "अगली पीढ़ी के लिए दुनिया की तकनीक को सरल बनाना। उपयोगी गाइड, टेक अपडेट और डिजिटल दुनिया की जानकारी हिंदी में पढ़ें।" }}
+    {{- $heroTitle = "स्थानीय जड़ों से आधुनिक तकनीक तक — Techwadh" }}
+    {{- $heroDescription = "Patwadh Kautuk की जड़ों से जन्मा Techwadh, उपयोगी टेक जानकारी, डिजिटल टूल्स और सोच-समझकर बनाए गए समाधानों को सरल भाषा में आपके सामने लाता है।" }}
   {{- end }}
   {{- with $homeInfo.Title }}{{ $heroTitle = . }}{{ end }}
+
   <section class="tw-hero">
     <div class="tw-hero-copy">
-      <p class="tw-eyebrow">{{ site.Title }} <span>•</span> {{ if eq site.Language.Lang "hi" }}तकनीक, आसान भाषा में{{ else }}Technology, made clear{{ end }}</p>
-      <h1>{{ $heroTitle | markdownify }}</h1>
+      <p class="tw-eyebrow">
+        {{- if eq site.Language.Lang "hi" -}}
+          स्थानीय जड़ें। डिजिटल कौशल। टेक के लिए निर्मित।
+        {{- else -}}
+          Local Roots. Digital Craft. Built for Tech.
+        {{- end -}}
+      </p>
+
+      <h1>
+        {{- if strings.HasPrefix $heroTitle "TechWadh" -}}
+          <span class="tw-title-blue">T</span>ech<span class="tw-title-blue">W</span>adh{{ strings.TrimPrefix "TechWadh" $heroTitle | markdownify }}
+        {{- else -}}
+          {{ $heroTitle | markdownify }}
+        {{- end -}}
+      </h1>
+
       <div class="tw-hero-description">
         {{- with $homeInfo.Content }}
           {{ . | $.Page.RenderString }}
@@ -19,42 +35,68 @@
           <p>{{ $heroDescription }}</p>
         {{- end }}
       </div>
+
       <div class="tw-hero-actions">
-        <a class="tw-button tw-button-primary" href="{{ "archives/" | relLangURL }}">{{ if eq site.Language.Lang "hi" }}लेख पढ़ें{{ else }}Explore articles{{ end }}</a>
-        <a class="tw-button tw-button-secondary" href="{{ "search/" | relLangURL }}">{{ if eq site.Language.Lang "hi" }}खोजें{{ else }}Search TechWadh{{ end }}</a>
+        <a class="tw-button tw-button-primary" href="{{ "archives/" | relLangURL }}">
+          {{- if eq site.Language.Lang "hi" -}}लेख पढ़ें{{- else -}}Explore articles{{- end -}}
+        </a>
+        <a class="tw-button tw-button-secondary" href="{{ "search/" | relLangURL }}">
+          {{- if eq site.Language.Lang "hi" -}}खोजें{{- else -}}Search TechWadh{{- end -}}
+        </a>
       </div>
     </div>
+
     <div class="tw-hero-art" aria-hidden="true">
-      <div class="tw-orbit tw-orbit-one"></div>
-      <div class="tw-orbit tw-orbit-two"></div>
-      <div class="tw-core">TW<span>•</span></div>
-      <div class="tw-float tw-float-top">AI &amp; Innovation</div>
-      <div class="tw-float tw-float-bottom">Understand technology</div>
+      <div class="tw-brand-mark">
+        <div class="tw-brand-tile">
+          <span>TW</span>
+        </div>
+        <div class="tw-brand-wordmark">TECHWADH</div>
+        <div class="tw-brand-caption">ROOTED IN IDEAS. BUILT FOR WHAT'S NEXT.</div>
+      </div>
     </div>
   </section>
 
   {{- $pages := where site.RegularPages "Draft" false }}
+  {{- $pages = where $pages "Section" "posts" }}
   {{- $pages = where $pages "Params.hidden" "!=" true }}
+
+  {{/* Only manually selected articles appear in Featured */}}
   {{- $featured := where $pages "Params.featured" true }}
-  {{- if not $featured }}{{ $featured = first 3 $pages.ByDate.Reverse }}{{ else }}{{ $featured = first 3 $featured.ByDate.Reverse }}{{ end }}
+  {{- $featured = first 3 $featured.ByDate.Reverse }}
+
   {{- if $featured }}
   <section class="tw-section">
     <div class="tw-section-heading">
-      <div><p class="tw-eyebrow">EDITOR'S PICKS</p><h2>Featured stories</h2></div>
+      <div>
+        <p class="tw-eyebrow">EDITOR'S PICKS</p>
+        <h2>Featured stories</h2>
+      </div>
       <a href="{{ "archives/" | relLangURL }}">View all articles <span aria-hidden="true">→</span></a>
     </div>
+
     <div class="tw-feature-grid{{ if eq (len $featured) 1 }} tw-feature-grid-single{{ end }}">
       {{- range $i, $page := $featured }}
       <article class="tw-feature-card{{ if eq $i 0 }} tw-feature-lead{{ end }}">
         <a class="tw-card-link" href="{{ $page.RelPermalink }}">
           {{- with $page.Params.cover.image }}
-          <div class="tw-card-image"><img src="{{ . | absURL }}" alt="{{ $page.Params.cover.alt | default $page.Title }}" loading="lazy"></div>
+          <div class="tw-card-image">
+            <img src="{{ . | absURL }}" alt="{{ $page.Params.cover.alt | default $page.Title }}" loading="lazy">
+          </div>
           {{- else }}
-          <div class="tw-card-art"><span>{{ with $page.Params.categories }}{{ index . 0 }}{{ else }}TECHWADH{{ end }}</span><b>TW</b></div>
+          <div class="tw-card-art">
+            <span>{{ with $page.Params.categories }}{{ index . 0 }}{{ else }}TECHWADH{{ end }}</span>
+            <b>TW</b>
+          </div>
           {{- end }}
+
           <div class="tw-card-body">
             <div class="tw-card-meta">
-              {{- with $page.Params.categories }}<span>{{ index . 0 }}</span>{{ else }}<span>Technology</span>{{ end }}
+              {{- with $page.Params.categories }}
+                <span>{{ index . 0 }}</span>
+              {{- else }}
+                <span>Technology</span>
+              {{- end }}
               <time>{{ $page.Date.Format "2 Jan 2006" }}</time>
             </div>
             <h3>{{ $page.Title }}</h3>
@@ -69,35 +111,59 @@
   {{- end }}
 
   {{- $categoryNames := slice }}
-  {{- range $name, $taxonomy := site.Taxonomies.categories }}{{ $categoryNames = $categoryNames | append $name }}{{ end }}
+  {{- range $name, $taxonomy := site.Taxonomies.categories }}
+    {{- $categoryNames = $categoryNames | append $name }}
+  {{- end }}
+
   {{- if $categoryNames }}
   <section class="tw-section">
-    <div class="tw-section-heading"><div><p class="tw-eyebrow">DISCOVER</p><h2>Explore topics</h2></div></div>
+    <div class="tw-section-heading">
+      <div>
+        <p class="tw-eyebrow">DISCOVER</p>
+        <h2>Explore topics</h2>
+      </div>
+    </div>
+
     <div class="tw-category-grid">
       {{- range first 6 (sort $categoryNames) }}
       <a class="tw-category-card" href="{{ printf "categories/%s/" (. | urlize) | relLangURL }}">
-        <span class="tw-category-icon">✳</span><strong>{{ . | title }}</strong><span class="tw-category-arrow">↗</span>
+        <span class="tw-category-icon">✳</span>
+        <strong>{{ . | title }}</strong>
+        <span class="tw-category-arrow">↗</span>
       </a>
       {{- end }}
     </div>
   </section>
   {{- end }}
 
-  {{- $latest := first 6 $pages.ByDate.Reverse }}
+  {{/* All non-featured articles appear in Latest */}}
+  {{- $latest := where $pages "Params.featured" "!=" true }}
+  {{- $latest = first 6 $latest.ByDate.Reverse }}
+
   {{- if $latest }}
   <section class="tw-section">
     <div class="tw-section-heading">
-      <div><p class="tw-eyebrow">FRESH OFF THE PRESS</p><h2>Latest articles</h2></div>
+      <div>
+        <p class="tw-eyebrow">FRESH OFF THE PRESS</p>
+        <h2>Latest articles</h2>
+      </div>
       <a href="{{ "archives/" | relLangURL }}">All articles <span aria-hidden="true">→</span></a>
     </div>
+
     <div class="tw-latest-list">
       {{- range $latest }}
       <article class="tw-latest-item">
-        <div class="tw-latest-date"><span>{{ .Date.Format "02" }}</span>{{ .Date.Format "Jan 2006" }}</div>
+        <div class="tw-latest-date">
+          <span>{{ .Date.Format "02" }}</span>
+          {{ .Date.Format "Jan 2006" }}
+        </div>
         <div class="tw-latest-copy">
           <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
           <p>{{ .Description | default .Summary | plainify | htmlUnescape | truncate 125 }}</p>
-          <div class="tw-latest-meta">{{ .ReadingTime }} min read{{ with .Params.categories }} <span>·</span> {{ index . 0 }}{{ end }}</div>
+          <div class="tw-latest-meta">
+            {{ .ReadingTime }} min read
+            {{- with .Params.categories }} <span>·</span> {{ index . 0 }}{{ end }}
+          </div>
         </div>
         <a class="tw-latest-arrow" href="{{ .RelPermalink }}" aria-label="Read {{ .Title }}">↗</a>
       </article>

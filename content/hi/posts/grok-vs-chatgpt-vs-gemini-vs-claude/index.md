@@ -37,9 +37,9 @@ AI असिस्टेंट अब सिर्फ सवालों के 
 
 ## 1. ChatGPT — कई तरह के काम के लिए ऑल-राउंड असिस्टेंट
 
-ChatGPT को OpenAI बनाता है। यह सिर्फ एक तरह के काम के बजाय कई तरह के कामों के लिए बनाया गया असिस्टेंट है। प्लान और उपलब्धता के अनुसार यूजर टेक्स्ट, इमेज, फाइल, वॉइस, वेब रिसर्च, डेटा एनालिसिस, Custom GPTs और कई चरणों वाले वर्कफ्लो इस्तेमाल कर सकते हैं।
+<text>ChatGPT को <Entity value="OpenAI" category="company"/> बनाता है।</text> यह सिर्फ एक तरह के काम के बजाय कई तरह के कामों के लिए बनाया गया असिस्टेंट है। प्लान और उपलब्धता के अनुसार यूजर टेक्स्ट, इमेज, फाइल, वॉइस, वेब रिसर्च, डेटा एनालिसिस, Custom GPTs और कई चरणों वाले वर्कफ्लो इस्तेमाल कर सकते हैं।
 
-OpenAI की मौजूदा मॉडल लाइनअप में GPT-6 परिवार शामिल है। 17 नवंबर 2026 के रिलीज नोट्स में API के लिए GPT-6.2 Astra और GPT-6.2 Sol पेश किए गए। ChatGPT में किसी खास मॉडल और टूल की उपलब्धता प्लान और रोलआउट पर निर्भर करती है। [1](https://help.openai.com/en/articles/9624314-model-release-notes)
+OpenAI की मौजूदा मॉडल लाइनअप में GPT-6 परिवार शामिल है। 17 नवंबर 2026 के रिलीज नोट्स में API के लिए GPT-6.2 Astra और GPT-6.2 Sol पेश किए गए। ChatGPT में किसी खास मॉडल और टूल की उपलब्धता प्लान और रोलआउट पर निर्भर करती है। <sup>[1](https://help.openai.com/en/articles/9624314-model-release-notes)</sup>
 
 **ChatGPT किन कामों में उपयोगी हो सकता है**
 - रोजमर्रा के सवाल, समझाना और नए आइडिया निकालना।
@@ -59,9 +59,9 @@ OpenAI की मौजूदा मॉडल लाइनअप में GPT-6
 
 ## 2. Claude — लेखन और कोडिंग पर फोकस
 
-Claude को Anthropic बनाता है। इसे लंबे लेख लिखने, एडिटिंग, बड़े डॉक्यूमेंट समझने और सॉफ्टवेयर डेवलपमेंट के कामों में अक्सर आजमाया जाता है। Claude में Projects, Artifacts और Claude Code जैसे टूल भी हैं; इनकी उपलब्धता प्लान के अनुसार बदलती है।
+<text>Claude को <Entity value="Anthropic" category="company"/> बनाता है।</text> इसे लंबे लेख लिखने, एडिटिंग, बड़े डॉक्यूमेंट समझने और सॉफ्टवेयर डेवलपमेंट के कामों में अक्सर आजमाया जाता है। Claude में Projects, Artifacts और Claude Code जैसे टूल भी हैं; इनकी उपलब्धता प्लान के अनुसार बदलती है।
 
-Anthropic ने 9 नवंबर 2026 को Claude Fable 5.2 और Claude Mythos 5.2 की घोषणा की। कंपनी के हालिया मॉडल में Claude Opus 5.5 और Sonnet 5.5 भी शामिल हैं। किस मॉडल का एक्सेस मिलेगा, यह प्रोडक्ट और प्लान पर निर्भर करता है। [2](https://www.anthropic.com/news/models)
+Anthropic ने 9 नवंबर 2026 को Claude Fable 5.2 और Claude Mythos 5.2 की घोषणा की। कंपनी के हालिया मॉडल में Claude Opus 5.5 और Sonnet 5.5 भी शामिल हैं। किस मॉडल का एक्सेस मिलेगा, यह प्रोडक्ट और प्लान पर निर्भर करता है। <sup>[2](https://www.anthropic.com/news/models)</sup>
 
 **Claude किन कामों में उपयोगी हो सकता है**
 - लंबे आर्टिकल, रिपोर्ट और डॉक्यूमेंट लिखना व सुधारना।
@@ -81,9 +81,9 @@ Anthropic ने 9 नवंबर 2026 को Claude Fable 5.2 और Claude My
 
 ## 3. Gemini — Google ऐप्स के साथ काम करने वालों के लिए
 
-Gemini को Google बनाता है। कई यूजर्स के लिए इसकी बड़ी खासियत Google के इकोसिस्टम से जुड़ाव है। प्लान, देश और अकाउंट के अनुसार Gemini, Gmail, Docs और Drive जैसी सेवाओं के साथ काम कर सकता है। Google AI Plans में Gemini और अन्य AI फीचर्स के अलग-अलग एक्सेस स्तर मिलते हैं।
+<text>Gemini को <Entity value="Google" category="company"/> बनाता है।</text> कई यूजर्स के लिए इसकी बड़ी खासियत Google के इकोसिस्टम से जुड़ाव है। प्लान, देश और अकाउंट के अनुसार Gemini, Gmail, Docs और Drive जैसी सेवाओं के साथ काम कर सकता है। Google AI Plans में Gemini और अन्य AI फीचर्स के अलग-अलग एक्सेस स्तर मिलते हैं।
 
-Google ने 18 नवंबर 2026 को Gemini 4 Neon की घोषणा की, जिसे कंपनी ने जटिल सॉफ्टवेयर इंजीनियरिंग, नॉलेज वर्क और साइंस वर्कफ्लो के लिए पेश किया। Gemini 4 Argon भी योग्य Google AI Pro और Ultra सब्सक्राइबर के लिए Gemini ऐप में उपलब्ध है। [3](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/) [4](https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/)
+Google ने 18 नवंबर 2026 को Gemini 4 Neon की घोषणा की, जिसे कंपनी ने जटिल सॉफ्टवेयर इंजीनियरिंग, नॉलेज वर्क और साइंस वर्कफ्लो के लिए पेश किया। Gemini 4 Argon भी योग्य Google AI Pro और Ultra सब्सक्राइबर के लिए Gemini ऐप में उपलब्ध है। <sup>[3](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/) [4](https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/)</sup>
 
 **Gemini किन कामों में उपयोगी हो सकता है**
 - Google के ऐप्स और सेवाओं के साथ काम।
@@ -103,9 +103,9 @@ Google ने 18 नवंबर 2026 को Gemini 4 Neon की घोषण�
 
 ## 4. Grok — X पर चल रही चर्चा और ताजा जानकारी के लिए
 
-Grok को xAI बनाता है। इसकी अलग पहचान real-time web और X search तक पहुंच है। किसी विषय पर लोग क्या कह रहे हैं, कैसी प्रतिक्रियाएं आ रही हैं और तेजी से बदलती चर्चा किस दिशा में जा रही है—यह समझने में यह उपयोगी हो सकता है। Grok में वॉइस और इमेज/वीडियो बनाने के फीचर भी हैं; इनका एक्सेस और लिमिट प्लान के अनुसार बदलता है।
+<text>Grok को <Entity value="xAI" category="company"/> बनाता है।</text> इसकी अलग पहचान real-time web और X search तक पहुंच है। किसी विषय पर लोग क्या कह रहे हैं, कैसी प्रतिक्रियाएं आ रही हैं और तेजी से बदलती चर्चा किस दिशा में जा रही है—यह समझने में यह उपयोगी हो सकता है। Grok में वॉइस और इमेज/वीडियो बनाने के फीचर भी हैं; इनका एक्सेस और लिमिट प्लान के अनुसार बदलता है।
 
-xAI की प्राइसिंग वेबसाइट पर Free और पेड SuperGrok प्लान दिए गए हैं। कंपनी Grok के फीचर्स में real-time web और X search का उल्लेख करती है। प्लान पेज पर Grok 4.6 और इमेज/वीडियो फीचर भी सूचीबद्ध हैं। [5](https://x.ai/pricing)
+xAI की प्राइसिंग वेबसाइट पर Free और पेड SuperGrok प्लान दिए गए हैं। कंपनी Grok के फीचर्स में real-time web और X search का उल्लेख करती है। प्लान पेज पर Grok 4.6 और इमेज/वीडियो फीचर भी सूचीबद्ध हैं। <sup>[5](https://x.ai/pricing)</sup>
 
 **Grok किन कामों में उपयोगी हो सकता है**
 - X पर सार्वजनिक चर्चा और प्रतिक्रियाएं देखना।
