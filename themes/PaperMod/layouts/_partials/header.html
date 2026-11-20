@@ -1,47 +1,82 @@
 <header class="header">
+
+    <!-- Trending bar -->
+    <div class="tw-trending-bar">
+        <div class="tw-trending-label">⚡ Trending:</div>
+        <div class="tw-trending-items">
+            <span>Latest Tech News</span>
+            <span>AI Tools</span>
+            <span>Mobile Updates</span>
+            <span>Govt Exams</span>
+            <span>Gen-Z Guides</span>
+        </div>
+    </div>
+
     <nav class="header-nav">
         <div class="logo">
+
+            <!-- TechWadh brand -->
             {{- $label_text := (site.Params.label.text | default site.Title) }}
             {{- if site.Title }}
-            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
-                {{- if site.Params.label.icon }}
-                {{- $img := resources.Get site.Params.label.icon }}
-                {{- if $img }}
-                    {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif" "webp") -}}
-                    {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
-                    {{- if and (in $processableFormats $img.MediaType.SubType) (eq $prod true)}}
-                        {{- if site.Params.label.iconHeight }}
-                            {{- $img = $img.Resize (printf "x%d" site.Params.label.iconHeight) }}
-                        {{ else }}
-                            {{- $img = $img.Resize "x30" }}
+            <div class="tw-brand">
+                <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
+                    {{- if site.Params.label.icon }}
+                        {{- $img := resources.Get site.Params.label.icon }}
+                        {{- if $img }}
+                            {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif" "webp") -}}
+                            {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
+                            {{- if and (in $processableFormats $img.MediaType.SubType) (eq $prod true) }}
+                                {{- if site.Params.label.iconHeight }}
+                                    {{- $img = $img.Resize (printf "x%d" site.Params.label.iconHeight) }}
+                                {{- else }}
+                                    {{- $img = $img.Resize "x30" }}
+                                {{- end }}
+                            {{- end }}
+                            <img src="{{ $img.Permalink }}" alt="" height="{{ site.Params.label.iconHeight | default "30" }}">
+                        {{- else }}
+                            <img src="{{ site.Params.label.icon | absURL }}" alt="" height="{{ site.Params.label.iconHeight | default "30" }}">
                         {{- end }}
+                    {{- else if hasPrefix site.Params.label.iconSVG "<svg" }}
+                        {{ site.Params.label.iconSVG | safeHTML }}
                     {{- end }}
-                    <img src="{{ $img.Permalink }}" alt=""
-                        height="{{- site.Params.label.iconHeight | default "30" -}}">
-                {{- else }}
-                <img src="{{- site.Params.label.icon | absURL -}}" alt=""
-                    height="{{- site.Params.label.iconHeight | default "30" -}}">
-                {{- end -}}
-                {{- else if hasPrefix site.Params.label.iconSVG "<svg" }}
-                    {{ site.Params.label.iconSVG | safeHTML }}
-                {{- end -}}
-                {{- $label_text -}}
-            </a>
+                    {{- $label_text -}}
+                </a>
+                <span class="tw-tagline">Tech · News · Guides · Gen-Z</span>
+            </div>
             {{- end }}
 
+            <!-- Main navigation -->
+            <ul class="tw-main-menu">
+                {{- $page_url := .Permalink | absLangURL }}
+                {{- range site.Menus.main }}
+                    {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL)) | absLangURL }}
+                    <li>
+                        <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }}">
+                            <span{{ if eq $menu_item_url $page_url }} class="active"{{ end }}>
+                                {{- .Pre }}{{ .Name }}{{ .Post -}}
+                            </span>
+                        </a>
+                    </li>
+                {{- end }}
+            </ul>
+
+            <!-- Live India date and time -->
+            <div class="tw-header-info">
+                <span id="tw-live-date"></span>
+                <span id="tw-live-time"></span>
+                <span class="tw-timezone">India (IST)</span>
+            </div>
+
+            <!-- Theme and language controls -->
             {{- $lsenabled := (or (not site.Params.disableThemeToggle) (and (not site.Params.disableLangToggle) (hugo.IsMultilingual))) }}
             {{- if $lsenabled }}
             <div class="logo-switches">
-                {{- if (not site.Params.disableThemeToggle) }}
+                {{- if not site.Params.disableThemeToggle }}
                 <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
                         <line x1="12" y1="1" x2="12" y2="3"></line>
                         <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -54,57 +89,63 @@
                     </svg>
                 </button>
                 {{- end }}
-                
-                {{- if (not site.Params.disableLangToggle) }}
-                    {{- $lang := .Lang}}
+
+                {{- if not site.Params.disableLangToggle }}
+                    {{- $lang := .Lang }}
                     {{- with site.Home.Translations }}
-                    {{- $separator := or $label_text (not site.Params.disableThemeToggle)}}
+                    {{- $separator := or $label_text (not site.Params.disableThemeToggle) }}
                     {{- if $separator }}<span class="nav-sep">|</span>{{ end }}
                     <ul class="lang-menu">
-                        {{- range . -}}
-                        {{- if ne $lang .Lang }}
-                        <li>
-                            <a href="{{- .Permalink -}}" title="{{ .Language.Params.languageAltTitle | default (.Language.Label | emojify) | default (.Lang | title) }}"
-                                aria-label="{{ .Language.Label | default (.Lang | title) }}">
-                                {{- if (and site.Params.displayFullLangName (.Language.Label)) }}
-                                {{- .Language.Label | emojify -}}
-                                {{- else }}
-                                {{- .Lang | title -}}
-                                {{- end -}}
-                            </a>
-                        </li>
-                        {{- end -}}
-                        {{- end}}
+                        {{- range . }}
+                            {{- if ne $lang .Lang }}
+                            <li>
+                                <a href="{{ .Permalink }}" title="{{ .Language.Params.languageAltTitle | default (.Language.Label | emojify) | default (.Lang | title) }}" aria-label="{{ .Language.Label | default (.Lang | title) }}">
+                                    {{- if and site.Params.displayFullLangName .Language.Label }}
+                                        {{ .Language.Label | emojify }}
+                                    {{- else }}
+                                        {{ .Lang | title }}
+                                    {{- end }}
+                                </a>
+                            </li>
+                            {{- end }}
+                        {{- end }}
                     </ul>
                     {{- end }}
                 {{- end }}
             </div>
             {{- end }}
+
         </div>
-        {{- $page_url:= .Permalink | absLangURL }}
-        <ul id="menu" class="menu">
-            {{- range site.Menus.main }}
-            {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
-            {{- $is_search := eq (site.GetPage .KeyName).Layout `search` }}
-            <li>
-                <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
-                {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
-                    <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
-                        {{- .Pre }}
-                        {{- .Name -}}
-                        {{ .Post -}}
-                    </span>
-                    {{- if (strings.Contains .URL "://") }}&nbsp;
-                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14L21 3"></path>
-                    </svg>
-                    {{- end }}
-                </a>
-            </li>
-            {{- end }}
-        </ul>
     </nav>
 </header>
+
+<script>
+(function () {
+    const dateFormatter = new Intl.DateTimeFormat("en-IN", {
+        timeZone: "Asia/Kolkata",
+        weekday: "short",
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+    });
+
+    const timeFormatter = new Intl.DateTimeFormat("en-IN", {
+        timeZone: "Asia/Kolkata",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true
+    });
+
+    function updateTechWadhClock() {
+        const now = new Date();
+        const date = document.getElementById("tw-live-date");
+        const time = document.getElementById("tw-live-time");
+        if (date) date.textContent = dateFormatter.format(now);
+        if (time) time.textContent = timeFormatter.format(now);
+    }
+
+    updateTechWadhClock();
+    window.setInterval(updateTechWadhClock, 1000);
+})();
+</script>
