@@ -444,3 +444,56 @@ a:hover { color: var(--tw-blue); }
   .tw-feature-grid-single .tw-feature-lead .tw-card-image,
   .tw-feature-grid-single .tw-feature-lead .tw-card-art { height: 205px; }
 }
+/* 
+/* TechWadh — Premium Footer Navigation */
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  max-width: 1140px;
+  margin: 12px auto 0;
+  padding: 14px 16px 28px;
+  border-top: none;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 17px;
+  border: 1px solid var(--tw-line);
+  border-radius: 999px;
+  background: var(--entry);
+  color: var(--tw-muted);
+  font-size: 0.86rem;
+  font-weight: 650;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  background: linear-gradient(110deg, #315efb, #7655e8);
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(49, 94, 251, 0.2);
+}
+
+.footer-links span {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .footer-links {
+    gap: 9px;
+    padding: 18px 10px 8px;
+  }
+
+  .footer-links a {
+    padding: 8px 13px;
+    font-size: 0.8rem;
+  }
+}

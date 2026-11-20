@@ -1,5 +1,9 @@
+
 {{- if not (.Param "hideFooter") }}
 <footer class="footer">
+
+    {{- partial "extend_footer.html" . }}
+
     {{- if not site.Params.footer.hideCopyright }}
         {{- if site.Copyright }}
         <span>{{ site.Copyright | markdownify }}</span>
@@ -20,7 +24,7 @@
         - If you choose to remove it, please consider adding a link to the PaperMod GitHub repository somewhere on your site to give credit to the project and its contributors.
         - Support us by sponsoring the project on GitHub Sponsors: https://github.com/sponsors/adityatelange
     */}}
-    
+
     <span>
         Powered by
         <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
@@ -39,18 +43,14 @@
 </a>
 {{- end }}
 
-{{- partial "extend_footer.html" . }}
-
 <script>
     let menu = document.getElementById('menu');
     if (menu) {
-        // Set the scroll position
         const scrollPosition = localStorage.getItem("menu-scroll-position");
         if (scrollPosition) {
             menu.scrollLeft = parseInt(scrollPosition, 10);
         }
-        
-        // Save once scrolling settles, not on every event
+
         let menuScrollTimeout;
         menu.addEventListener("scroll", function () {
             clearTimeout(menuScrollTimeout);
@@ -72,8 +72,7 @@
             } else {
                 target.scrollIntoView();
             }
-            // Move keyboard focus to the target like native anchor navigation,
-            // so the next Tab continues from there instead of from this link
+
             if (target.tabIndex < 0 && !target.hasAttribute("tabindex")) {
                 target.setAttribute("tabindex", "-1");
             }
@@ -85,14 +84,12 @@
             }
         });
     });
-
 </script>
 
 {{- if (not site.Params.disableScrollToTop) }}
 <script>
     var toplink = document.getElementById("top-link");
     var scrollTicking = false;
-    // At most one check per frame
     window.addEventListener("scroll", function () {
         if (scrollTicking) {
             return;
@@ -105,7 +102,6 @@
             scrollTicking = false;
         });
     }, { passive: true });
-
 </script>
 {{- end }}
 
@@ -121,7 +117,6 @@
             localStorage.setItem("pref-theme", 'dark');
         }
     })
-
 </script>
 {{- end }}
 
@@ -156,7 +151,7 @@
             try {
                 document.execCommand('copy');
                 copyingDone();
-            } catch (e) { };
+            } catch (e) {};
             selection.removeRange(range);
         });
 
@@ -168,7 +163,6 @@
             // table containing LineNos and code
             codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
         } else {
-            // code blocks not having highlight as parent class
             codeblock.parentNode.appendChild(copybutton);
         }
     });

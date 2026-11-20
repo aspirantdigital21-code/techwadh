@@ -14,6 +14,7 @@ defaultContentLanguageInSubdir = false
   home = ["HTML", "RSS", "JSON"]
 
 [params]
+  author = "TechWadh Editorial Team"
   defaultTheme = "auto"
   ShowReadingTime = true
   ShowToc = true
@@ -21,7 +22,7 @@ defaultContentLanguageInSubdir = false
   ShowPostNavLinks = true
   ShowCodeCopyButtons = true
   ShowAllPagesInArchive = true
-
+  
 [params.fuseOpts]
   isCaseSensitive = false
   shouldSort = true
