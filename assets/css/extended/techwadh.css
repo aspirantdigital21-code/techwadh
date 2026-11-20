@@ -751,6 +751,7 @@ html {
 @media (max-width: 760px) {
   .main { margin-top: 44px; }
 }
+<<<<<<< HEAD
 /* Compact hero — keep restored header and footer intact */
 .tw-hero {
   min-height: 0;
@@ -935,3 +936,20 @@ html {
   font-weight: 750;
   margin-left: 8px;
 }
+=======
+
+/* PREMIUM BRAND HERO — NATIVE ROOTS / DIGITAL CRAFT */
+.tw-hero{min-height:430px;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:clamp(22px,4vw,54px);background:radial-gradient(ellipse at 82% 48%,rgba(56,126,232,.15),transparent 38%),radial-gradient(ellipse at 10% 95%,rgba(36,185,176,.07),transparent 34%),linear-gradient(128deg,var(--entry) 8%,var(--tw-soft) 100%)}
+.tw-hero .tw-eyebrow{margin-bottom:18px;letter-spacing:.13em;font-size:.69rem}
+.tw-hero h1{max-width:680px;font-size:clamp(2.45rem,4.6vw,3.85rem);line-height:1.06;letter-spacing:-.058em;text-wrap:balance}
+.tw-hero-description{max-width:620px;font-size:clamp(.98rem,1.25vw,1.08rem);line-height:1.82}
+.tw-hero-art{min-height:330px}
+.tw-brand-visual{position:relative;width:min(100%,430px);aspect-ratio:440/360;display:grid;place-items:center;isolation:isolate}
+.tw-visual-glow{position:absolute;z-index:-1;width:64%;aspect-ratio:1;border-radius:50%;background:rgba(48,122,225,.2);filter:blur(42px)}
+.tw-brand-svg{width:100%;height:auto;overflow:visible}
+.tw-visual-chip{position:absolute;z-index:2;padding:9px 13px;border:1px solid color-mix(in srgb,var(--tw-blue) 16%,var(--tw-line));border-radius:999px;background:color-mix(in srgb,var(--entry) 90%,transparent);box-shadow:0 8px 24px rgba(20,52,100,.10);color:var(--primary);font-size:.63rem;font-weight:850;letter-spacing:.12em;white-space:nowrap}
+.tw-visual-chip-top{top:7%;right:1%}.tw-visual-chip-bottom{bottom:8%;left:0}
+:root[data-theme="dark"] .tw-hero{background:radial-gradient(ellipse at 82% 48%,rgba(76,130,232,.17),transparent 38%),radial-gradient(ellipse at 10% 95%,rgba(36,185,176,.08),transparent 34%),linear-gradient(128deg,var(--entry) 8%,var(--tw-soft) 100%)}
+@media(max-width:760px){.tw-hero{min-height:0;grid-template-columns:1fr;gap:0}.tw-hero h1{max-width:100%;font-size:clamp(2.15rem,8.5vw,3.1rem)}.tw-hero-description{font-size:.98rem;line-height:1.72}.tw-hero-art{min-height:245px;margin-top:5px}.tw-brand-visual{width:min(100%,350px)}}
+@media(max-width:420px){.tw-hero{padding:27px 20px}.tw-hero .tw-eyebrow{font-size:.61rem;letter-spacing:.1em}.tw-hero-art{min-height:215px}.tw-visual-chip{padding:7px 10px;font-size:.56rem}}
+>>>>>>> origin/main

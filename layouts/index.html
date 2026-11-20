@@ -2,8 +2,13 @@
 {{- define "main" -}}
 <main class="tw-home">
   {{- $homeInfo := site.Params.homeInfoParams }}
+<<<<<<< HEAD
   {{- $heroTitle := "TechWadh : Where Native Roots Meet Modern Tech" }}
   {{- $heroDescription := "Born from the roots of Patwadh Kautuk, Techwadh brings together practical technology insights, useful digital tools, and thoughtful builds, crafted simply and clearly for everyday use." }}
+=======
+  {{- $heroTitle := "Techwadh — Where Native Roots Meet Modern Tech" }}
+  {{- $heroDescription := "Born from the roots of Patwadh Kautuk, Techwadh brings together practical technology insights, useful digital tools, and thoughtful builds—crafted simply and clearly for everyday use." }}
+>>>>>>> origin/main
   {{- if eq site.Language.Lang "hi" }}
     {{- $heroTitle = "स्थानीय जड़ों से आधुनिक तकनीक तक — Techwadh" }}
     {{- $heroDescription = "Patwadh Kautuk की जड़ों से जन्मा Techwadh, उपयोगी टेक जानकारी, डिजिटल टूल्स और सोच-समझकर बनाए गए समाधानों को सरल भाषा में आपके सामने लाता है।" }}
@@ -12,6 +17,7 @@
 
   <section class="tw-hero">
     <div class="tw-hero-copy">
+<<<<<<< HEAD
       <p class="tw-eyebrow">
         {{- if eq site.Language.Lang "hi" -}}
           स्थानीय जड़ें। डिजिटल कौशल। टेक के लिए निर्मित।
@@ -28,6 +34,10 @@
         {{- end -}}
       </h1>
 
+=======
+      <p class="tw-eyebrow">{{ if eq site.Language.Lang "hi" }}स्थानीय जड़ें। डिजिटल कौशल। टेक के लिए निर्मित।{{ else }}Local Roots. Digital Craft. Built for Tech.{{ end }}</p>
+      <h1>{{ $heroTitle | markdownify }}</h1>
+>>>>>>> origin/main
       <div class="tw-hero-description">
         {{- with $homeInfo.Content }}
           {{ . | $.Page.RenderString }}
@@ -47,12 +57,29 @@
     </div>
 
     <div class="tw-hero-art" aria-hidden="true">
+<<<<<<< HEAD
       <div class="tw-brand-mark">
         <div class="tw-brand-tile">
           <span>TW</span>
         </div>
         <div class="tw-brand-wordmark">TECHWADH</div>
         <div class="tw-brand-caption">ROOTED IN IDEAS. BUILT FOR WHAT'S NEXT.</div>
+=======
+      <div class="tw-brand-visual">
+        <div class="tw-visual-glow"></div>
+        <svg class="tw-brand-svg" viewBox="0 0 440 360" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="tw-mark-fill" x1="72" y1="48" x2="340" y2="310" gradientUnits="userSpaceOnUse"><stop stop-color="#102B55"/><stop offset=".58" stop-color="#1554A6"/><stop offset="1" stop-color="#2879E8"/></linearGradient>
+            <linearGradient id="tw-mark-stroke" x1="80" y1="70" x2="350" y2="290" gradientUnits="userSpaceOnUse"><stop stop-color="#8BB9FF"/><stop offset="1" stop-color="#42D5DF"/></linearGradient>
+          </defs>
+          <g fill="none" stroke="url(#tw-mark-stroke)" stroke-width="1.5"><path d="M42 184C95 45 302 16 389 128C449 205 327 330 190 317C79 306 8 255 42 184Z" opacity=".56"/><path d="M78 70C179 2 346 91 360 205C371 297 226 346 119 269C23 199 11 115 78 70Z" opacity=".38"/><path d="M46 267L112 267L145 234M332 91L365 91L388 68" opacity=".7"/></g>
+          <g fill="#48C9DB"><circle cx="46" cy="267" r="5"/><circle cx="388" cy="68" r="5"/><circle cx="145" cy="234" r="4"/></g>
+          <g transform="translate(103 62) rotate(-7 116 116)"><rect x="8" y="8" width="224" height="224" rx="58" fill="#071B38" opacity=".13"/><rect width="224" height="224" rx="58" fill="url(#tw-mark-fill)" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><path d="M48 70H176M112 70V174" stroke="rgba(255,255,255,.12)" stroke-width="2"/><path d="M49 82H91L112 147L133 82H175" fill="none" stroke="#FFFFFF" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/><path d="M112 147C112 126 126 111 147 111" fill="none" stroke="#68D6DF" stroke-width="8" stroke-linecap="round"/><circle cx="177" cy="174" r="8" fill="#68D6DF"/></g>
+          <g fill="none" stroke="#69D6C7" stroke-width="3" stroke-linecap="round"><path d="M326 252C345 218 371 216 386 222C382 249 362 269 326 252Z"/><path d="M329 252L374 226"/></g>
+        </svg>
+        <span class="tw-visual-chip tw-visual-chip-top">NATIVE ROOTS</span>
+        <span class="tw-visual-chip tw-visual-chip-bottom">MODERN BUILDS</span>
+>>>>>>> origin/main
       </div>
     </div>
   </section>
