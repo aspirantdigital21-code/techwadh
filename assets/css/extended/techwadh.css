@@ -748,3 +748,6 @@ html {
   .tw-header-info { display: none; }
   .main { position: relative; z-index: 1; }
 }
+@media (max-width: 760px) {
+  .main { margin-top: 44px; }
+}

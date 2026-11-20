@@ -22,6 +22,7 @@ defaultContentLanguageInSubdir = false
   ShowPostNavLinks = true
   ShowCodeCopyButtons = true
   ShowAllPagesInArchive = true
+  displayFullLangName = true
   
 [params.fuseOpts]
   isCaseSensitive = false
