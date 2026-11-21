@@ -37,9 +37,9 @@ This is a practical guide, not a controlled head-to-head benchmark. The result y
 
 ## 1. ChatGPT — the all-round assistant
 
-<text>ChatGPT is made by <Entity value="OpenAI" category="company"/>.</text> It is designed as a broad assistant rather than a tool for only one kind of task. Depending on the plan and availability, users can work with text, images, files, voice, web research, data analysis, custom GPTs and multi-step workflows.
+**ChatGPT is made by [OpenAI](https://openai.com/).** It is designed as a broad assistant rather than a tool for only one kind of task. Depending on the plan and availability, users can work with text, images, files, voice, web research, data analysis, custom GPTs and multi-step workflows.
 
-OpenAI's current product lineup includes the GPT-6 family, while its November 17 release notes introduce GPT-6.2 Astra and GPT-6.2 Sol for API use. Access to particular models and tools in ChatGPT depends on the plan and rollout. <sup>[1](https://help.openai.com/en/articles/9624314-model-release-notes)</sup>
+OpenAI's current product lineup includes the GPT-6 family, while its November 17 release notes introduce GPT-6.2 Astra and GPT-6.2 Sol for API use. Access to particular models and tools in ChatGPT depends on the plan and rollout. [1](https://help.openai.com/en/articles/9624314-model-release-notes)
 
 **Where ChatGPT can be a good fit**
 - Everyday questions, explanations and brainstorming.
@@ -59,9 +59,9 @@ Official information: [ChatGPT plans and pricing](https://chatgpt.com/pricing/) 
 
 ## 2. Claude — writing and coding-focused work
 
-<text>Claude is made by <Entity value="Anthropic" category="company"/>.</text> It is often considered for long-form writing, editing, reasoning over documents and software development. Claude also offers tools such as Projects, Artifacts and Claude Code, with availability depending on the plan.
+**Claude is made by [Anthropic](https://www.anthropic.com/).** It is often considered for long-form writing, editing, reasoning over documents and software development. Claude also offers tools such as Projects, Artifacts and Claude Code, with availability depending on the plan.
 
-Anthropic announced Claude Fable 5.2 and Claude Mythos 5.2 on November 9, 2026. It also lists Claude Opus 5.5 and Sonnet 5.5 among its recent models. Model access depends on the product and plan. <sup>[2](https://www.anthropic.com/news/models)</sup>
+Anthropic announced Claude Fable 5.2 and Claude Mythos 5.2 on November 9, 2026. It also lists Claude Opus 5.5 and Sonnet 5.5 among its recent models. Model access depends on the product and plan. [2](https://www.anthropic.com/news/models)
 
 **Where Claude can be a good fit**
 - Drafting and polishing long articles, reports and documents.
@@ -81,9 +81,9 @@ Official information: [Claude plans](https://claude.com/pricing) · [Anthropic m
 
 ## 3. Gemini — useful for Google-connected work
 
-<text>Gemini is made by <Entity value="Google" category="company"/>.</text> Its biggest practical advantage for many people is its connection with Google's ecosystem. Depending on the plan, region and account, Gemini features can work alongside services such as Gmail, Docs and Drive. Google's AI plans also bundle different levels of access to Gemini and other AI features.
+**Gemini is made by [Google](https://google.com/).** Its biggest practical advantage for many people is its connection with Google's ecosystem. Depending on the plan, region and account, Gemini features can work alongside services such as Gmail, Docs and Drive. Google's AI plans also bundle different levels of access to Gemini and other AI features.
 
-Google announced Gemini 4 Neon on November 18, 2026, describing it as a model for complex software engineering, knowledge work and science workflows. Gemini 4 Argon is also available in the Gemini app for eligible Google AI Pro and Ultra subscribers. <sup>[3](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/) [4](https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/)</sup>
+Google announced Gemini 4 Neon on November 18, 2026, describing it as a model for complex software engineering, knowledge work and science workflows. Gemini 4 Argon is also available in the Gemini app for eligible Google AI Pro and Ultra subscribers. [3](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/) [4](https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/)
 
 **Where Gemini can be a good fit**
 - Working across Google's apps and services.
@@ -103,9 +103,9 @@ Official information: [Google AI plans](https://one.google.com/intl/en_in/about/
 
 ## 4. Grok — public conversation and X context
 
-<text>Grok is made by <Entity value="xAI" category="company"/>.</text> One of its distinctive angles is access to real-time web and X search. That can be useful when you want to follow public discussion, reactions and developing conversations around a topic. Grok also offers voice and image/video creation features, with access and limits depending on the plan.
+**Grok is made by [xAI](https://x.ai/).** One of its distinctive angles is access to real-time web and X search. That can be useful when you want to follow public discussion, reactions and developing conversations around a topic. Grok also offers voice and image/video creation features, with access and limits depending on the plan.
 
-The xAI pricing page currently lists a free option and paid SuperGrok tiers, and describes real-time web and X search among Grok's features. Its plan page lists Grok 4.6 and image/video capabilities. <sup>[5](https://x.ai/pricing)</sup>
+The xAI pricing page currently lists a free option and paid SuperGrok tiers, and describes real-time web and X search among Grok's features. Its plan page lists Grok 4.6 and image/video capabilities. [5](https://x.ai/pricing)
 
 **Where Grok can be a good fit**
 - Tracking public discussion and reactions on X.
