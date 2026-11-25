@@ -14,7 +14,15 @@
 
 {{- if not (.Param "hideAuthor") -}}
     {{- with (partial "author.html" .) }}
-        {{- $meta = $meta | append (printf "<span>%s</span>" .) }}
+        {{- if and (eq $.Section "posts") (eq . "TechWadh Editorial Team") }}
+            {{- with site.GetPage "/about" }}
+                {{- $meta = $meta | append (printf "<span><a href='%s#editorial-team'>%s</a></span>" .RelPermalink "TechWadh Editorial Team") }}
+            {{- else }}
+                {{- $meta = $meta | append "<span>TechWadh Editorial Team</span>" }}
+            {{- end }}
+        {{- else }}
+            {{- $meta = $meta | append (printf "<span>%s</span>" .) }}
+        {{- end }}
     {{- end }}
 {{- end }}
 

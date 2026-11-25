@@ -8,12 +8,14 @@
             {{- range slice
                 (dict "slug" "ai-tools" "en" "AI Tools" "hi" "AI टूल्स")
                 (dict "slug" "smartphones" "en" "Smartphones" "hi" "स्मार्टफ़ोन")
-                (dict "slug" "government-jobs" "en" "Govt Jobs" "hi" "सरकारी नौकरियाँ")
-                (dict "slug" "government-exams" "en" "Govt Exams" "hi" "सरकारी परीक्षाएँ") }}
+                (dict "slug" "laptops" "en" "Laptops" "hi" "लैपटॉप") }}
                 {{- $topic := . }}
                 {{- with site.GetPage (printf "/categories/%s" .slug) }}
                 <a href="{{ .RelPermalink }}">{{ cond $hi $topic.hi $topic.en }}</a>
                 {{- end }}
+            {{- end }}
+            {{- with site.GetPage "/jobs-and-exams" }}
+            <a href="{{ .RelPermalink }}">{{ cond $hi "भर्ती और परीक्षाएँ" "Jobs & Exams" }}</a>
             {{- end }}
         </div>
         <span class="tw-topics-hint" aria-hidden="true">›</span>

@@ -1,6 +1,7 @@
 +++
 title = "Best Budget Phones Under ₹20,000 in India: 5 Picks by Priority"
 date = 2026-11-19T10:00:00+05:30
+lastmod = 2026-11-25T00:00:00+05:30
 draft = false
 description = "Compare five budget smartphones by battery, performance, cameras and software support. See what to check before paying."
 summary = "Compare five budget smartphones by battery, performance, cameras and software support. See what to check before paying."
@@ -23,7 +24,7 @@ Shopping for a phone under ₹20,000? Use the **Realme P4x 5G** as a starting po
 
 This guide focuses on **value-for-money smartphones around ₹10,000–₹20,000** that are worth comparing in India as of **19 November 2026**. We have grouped the picks by the kind of buyer they suit instead of pretending that one phone is perfect for everyone.
 
-> **Price note:** Prices are indicative online prices/list prices reported by Indian technology publications on the date checked. They can change by seller, storage variant, bank offer and sale. Confirm the final price and exact variant before purchasing.
+> **Prices researched on 19 November 2026.** Prices are indicative online prices/list prices reported by Indian technology publications on the date checked. They can change by seller, storage variant, bank offer and sale. Confirm the final price and exact variant before purchasing.
 
 ## Quick picks: which phone should you consider?
 

@@ -54,7 +54,7 @@
               {{- else }}
                 <span>Technology</span>
               {{- end }}
-              <time>{{ $page.Date.Format "2 Jan 2006" }}</time>
+              {{- if not $page.Date.IsZero }}<time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "2 Jan 2006" }}</time>{{ end }}
             </div>
             <h3>{{ $page.Title }}</h3>
             <p>{{ $page.Description | default $page.Summary | plainify | htmlUnescape | truncate 150 }}</p>
@@ -120,7 +120,7 @@
           <h3>{{ .Title }}</h3>
           <p>{{ .Description | default .Summary | plainify | htmlUnescape | truncate 125 }}</p>
           <div class="tw-latest-meta">
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time> · {{ .ReadingTime }} min read
+            {{ if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time> · {{ end }}{{ .ReadingTime }} min read
             {{- with .Params.categories }} <span>·</span> {{ index . 0 }}{{ end }}
           </div>
           <span class="tw-latest-arrow" aria-hidden="true">↗</span>

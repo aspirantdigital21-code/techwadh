@@ -1,6 +1,7 @@
 +++
 title = "RRB Station Master Recruitment 2026: Last Date, Eligibility and Pay"
 date = "2026-11-21T18:30:00+05:30"
+lastmod = 2026-11-25T00:00:00+05:30
 draft = false
 description = "Check the RRB Station Master application deadline, graduate eligibility, starting pay and official links for CEN 08/2026."
 summary = "Check the RRB Station Master application deadline, graduate eligibility, starting pay and official links for CEN 08/2026."
@@ -23,7 +24,7 @@ Looking for the RRB Station Master application deadline? **CEN 08/2026 lists 25 
 
 Online applications opened on **27 October 2026**. The last date to submit the form is **25 November 2026, up to 11:59 PM**. Candidates should read the detailed notification and check the post's medical requirements before choosing an RRB.
 
-> **Update: 21 November 2026.** This article is an independently written summary for readers. The official RRB notification and Ministry of Railways announcements remain the final authority. Verify all details before submitting an application.
+> **Schedule checked 25 November 2026.** The [Railways announcement](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2329071&lang=1&reg=48) and CEN 08/2026 list **25 November, 11:59 p.m. IST** as the deadline for new applications. The **27 November** fee deadline applies to forms already submitted. Check the [RRB application portal](https://www.rrbapply.gov.in/) for live status and the [RRB notices](https://rrb.indianrailways.gov.in/) for any change.
 
 ## RRB Station Master Recruitment 2026: Overview
 

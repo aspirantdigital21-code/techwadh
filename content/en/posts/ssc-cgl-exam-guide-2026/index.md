@@ -1,6 +1,7 @@
 +++
 title = "SSC CGL 2026 Syllabus and Exam Pattern: Tier 1 vs Tier 2"
 date = "2026-11-21T12:00:00+05:30"
+lastmod = 2026-11-25T00:00:00+05:30
 draft = false
 description = "Compare SSC CGL Tier 1 and Tier 2, see what to study, and check eligibility, pay levels and official notices."
 summary = "Compare SSC CGL Tier 1 and Tier 2, see what to study, and check eligibility, pay levels and official notices."
@@ -23,7 +24,7 @@ Preparing for SSC CGL 2026? **Start with the four Tier 1 areas: reasoning, gener
 
 If you are planning to prepare for SSC CGL, this guide explains the posts, eligibility, age limits, exam pattern, syllabus, pay levels and a practical preparation strategy. It also covers the current status of the 2026 examination.
 
-> **Information updated: 21 November 2026.** Dates and rules below are based on the SSC CGL 2026 official notification and subsequent SSC notices. Always check the latest notice on the official SSC website before acting.
+> **Status checked 25 November 2026.** The application window has ended. The [official Tier I answer-key notice](https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/writeup_04112026.pdf) lists **7 November 2026, 9 p.m. IST** as the end of the objection window. Check [SSC Results](https://ssc.gov.in/home/result) for the Tier I result and Tier II shortlist.
 
 ## What is SSC CGL?
 

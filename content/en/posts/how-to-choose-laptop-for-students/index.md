@@ -1,6 +1,7 @@
 +++
 title = "Best Laptop Specs for Students: Is 8GB RAM Enough for College?"
 date = 2026-11-19T10:00:00+05:30
+lastmod = 2026-11-25T00:00:00+05:30
 draft = false
 description = "Choose a student laptop by course, RAM, processor, SSD, battery and budget. See when 8GB is enough and when to buy 16GB."
 summary = "Choose a student laptop by course, RAM, processor, SSD, battery and budget. See when 8GB is enough and when to buy 16GB."
@@ -24,6 +25,8 @@ For notes, browser tabs and online classes, **8GB RAM and an SSD can be enough**
 A commerce student writing reports does not need the same hardware as an engineering student running CAD software. A design student may care more about display quality, while someone who travels to college every day may value low weight and battery life.
 
 This guide explains how to choose a laptop based on your actual study needs, with practical specifications and budget priorities for buyers in India.
+
+> **How this guide was researched.** We compared manufacturer buying guides and published coverage with common student workloads. The budget bands are planning estimates. Compare the current price of the exact configuration before buying.
 
 ## 1. Start with your course and the software you will use
 

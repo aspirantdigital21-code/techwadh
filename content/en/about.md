@@ -31,3 +31,9 @@ Product prices, features and availability may change. Readers should verify impo
 Our mission is simple: make technology easier to understand so readers can make smarter technology decisions.
 
 Thank you for visiting TechWadh.
+
+## TechWadh Editorial Team {#editorial-team}
+
+TechWadh credits its research-based guides to the editorial team. If an article includes hands-on testing, we describe what was tested and under what conditions. In buying guides, we distinguish official specifications, published review observations and the prices available when the guide was researched.
+
+For recruitment and exam guides, we link to official notices and date the status we verify. We update the article when those notices change a deadline, an application window or an exam stage.
