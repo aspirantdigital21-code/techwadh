@@ -1347,14 +1347,14 @@ body.list { background: var(--theme); }
     justify-self: center;
     white-space: nowrap;
     color: var(--tw-editorial-ink);
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
-    line-height: 13px;
+    line-height: 14px;
     text-align: center;
     font-variant-numeric: tabular-nums;
   }
 
   .tw-mobile-clock span { display: block; }
-  .tw-mobile-clock span:first-child { font-size: 10px; }
+  .tw-mobile-clock span:first-child { font-size: 11px; margin-bottom: 2px; }
   .header-nav .logo-switches { grid-area: 1 / 3; }
 }
