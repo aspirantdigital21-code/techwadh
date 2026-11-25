@@ -38,7 +38,7 @@
         <a class="tw-card-link" href="{{ $page.RelPermalink }}">
           {{- with $page.Params.cover.image }}
           <div class="tw-card-image">
-            {{ partial "home-article-cover.html" (dict "page" $page "size" "feature") }}
+            {{ partial "home-article-cover.html" (dict "page" $page "size" "feature" "priority" (eq $i 0)) }}
           </div>
           {{- else }}
           <div class="tw-card-art">
@@ -115,7 +115,7 @@
       <article class="tw-latest-item">
         <a class="tw-latest-copy{{ if .Params.cover.image }} tw-latest-with-cover{{ end }}" href="{{ .RelPermalink }}">
           {{- if .Params.cover.image }}
-          <span class="tw-latest-thumb">{{ partial "home-article-cover.html" (dict "page" . "size" "thumb") }}</span>
+          <span class="tw-latest-thumb">{{ partial "home-article-cover.html" (dict "page" . "size" "thumb" "priority" false) }}</span>
           {{- end }}
           <h3>{{ .Title }}</h3>
           <p>{{ .Description | default .Summary | plainify | htmlUnescape | truncate 125 }}</p>

@@ -22,6 +22,11 @@
         {{- $imgdl = $cover.Permalink }}
     {{- end -}}
 
+    {{- if and $cover (hasPrefix .Params.cover.image "images/covers/") }}
+        {{- if $addLink }}<a href="{{ $imgdl }}" target="_blank" rel="noopener noreferrer">{{ end }}
+        {{ partial "home-article-cover.html" (dict "page" . "size" (cond $.IsSingle "article" "feature") "priority" $.IsSingle) }}
+        {{- if $addLink }}</a>{{ end }}
+    {{- else }}
     {{- if $addLink }}
         <a href="{{ $imgdl }}" target="_blank" rel="noopener noreferrer">
     {{- end }}
@@ -51,6 +56,8 @@
     {{- if $addLink }}
         </a>
     {{- end -}}
+
+    {{- end }}
 
     {{- /*  Display Caption  */}}
     {{- if $.IsSingle }}

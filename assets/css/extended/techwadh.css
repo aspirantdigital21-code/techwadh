@@ -1261,3 +1261,27 @@ body.list { background: var(--theme); }
   .tw-latest-thumb { width: 64px; }
   .tw-home .tw-latest-with-cover .tw-latest-arrow { width: 24px; height: 24px; }
 }
+
+.tw-archive-with-cover {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 14px;
+  align-items: center;
+  padding: 10px;
+}
+.tw-archive-thumb {
+  grid-row: span 2;
+  align-self: center;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--tw-soft);
+}
+.tw-archive-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.tw-archive-with-cover .archive-entry-title { align-self: end; overflow-wrap: anywhere; }
+.tw-archive-with-cover .archive-meta { align-self: start; }
+@media (max-width: 520px) {
+  .tw-archive-with-cover { grid-template-columns: 64px minmax(0, 1fr); column-gap: 10px; }
+  .tw-archive-with-cover .archive-entry-title { font-size: .98rem; }
+}

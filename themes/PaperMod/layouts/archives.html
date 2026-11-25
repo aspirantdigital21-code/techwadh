@@ -33,6 +33,7 @@
 {{- $pages = site.RegularPages }}
 {{- end }}
 
+{{- $firstCover := true }}
 {{- range $pages.GroupByPublishDate "2006" }}
 {{- if ne .Key "0001" }}
 <div class="archive-year">
@@ -54,7 +55,13 @@
     <div class="archive-posts">
       {{- range .Pages }}
       {{- if eq .Kind "page" }}
-      <div class="archive-entry">
+      <div class="archive-entry{{ if .Params.cover.image }} tw-archive-with-cover{{ end }}">
+        {{- if .Params.cover.image }}
+        <div class="tw-archive-thumb">
+          {{ partial "home-article-cover.html" (dict "page" . "size" "thumb" "priority" $firstCover) }}
+        </div>
+        {{- $firstCover = false }}
+        {{- end }}
         <h3 class="archive-entry-title entry-hint-parent">
           {{- .Title | markdownify }}
           {{- if .Draft }}
