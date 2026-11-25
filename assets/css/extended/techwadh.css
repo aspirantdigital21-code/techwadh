@@ -1013,11 +1013,21 @@ html {
 .tw-topics-hint { display: none; }
 
 @media (max-width: 600px) {
-  .tw-topics-hint {
-    display: block;
-    flex: 0 0 auto;
+  .tw-topics-hint:not([hidden]) {
+    display: grid;
+    place-items: center;
+    flex: 0 0 44px;
+    min-height: 44px;
+    border-radius: 6px;
+    color: inherit;
     font-size: 1.15rem;
     line-height: 1;
+    cursor: pointer;
+  }
+
+  .tw-topics-hint:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: -2px;
   }
 }
 

@@ -4,7 +4,7 @@
     {{- $topicsLabel := cond $hi "प्रमुख विषय" "Quick topics" }}
     <nav class="tw-trending-bar" aria-label="{{ $topicsLabel }}">
         <span class="tw-trending-label">{{ $topicsLabel }}</span>
-        <div class="tw-trending-items">
+        <div class="tw-trending-items" id="tw-quick-topics">
             {{- range slice
                 (dict "slug" "ai-tools" "en" "AI Tools" "hi" "AI टूल्स")
                 (dict "slug" "smartphones" "en" "Smartphones" "hi" "स्मार्टफ़ोन")
@@ -15,10 +15,14 @@
                 {{- end }}
             {{- end }}
             {{- with site.GetPage "/jobs-and-exams" }}
-            <a href="{{ .RelPermalink }}">{{ cond $hi "भर्ती और परीक्षाएँ" "Jobs & Exams" }}</a>
+            <a id="tw-jobs-topic" href="{{ .RelPermalink }}">{{ cond $hi "भर्ती और परीक्षाएँ" "Jobs & Exams" }}</a>
             {{- end }}
         </div>
-        <span class="tw-topics-hint" aria-hidden="true">›</span>
+        {{- with site.GetPage "/jobs-and-exams" }}
+        <button class="tw-topics-hint" type="button" aria-controls="tw-quick-topics" aria-label="{{ cond $hi "भर्ती और परीक्षाएँ लिंक दिखाएँ" "Show Jobs & Exams link" }}" hidden>
+            <span aria-hidden="true">›</span>
+        </button>
+        {{- end }}
     </nav>
 
     <nav class="header-nav">
@@ -130,6 +134,17 @@
 
 <script>
 (function () {
+    const jobsLink = document.getElementById("tw-jobs-topic");
+    const topicsButton = document.querySelector(".tw-topics-hint");
+    if (jobsLink && topicsButton) {
+        topicsButton.hidden = false;
+        topicsButton.addEventListener("click", function () {
+            const topics = document.getElementById("tw-quick-topics");
+            topics.scrollLeft = topics.scrollWidth;
+            jobsLink.focus({ preventScroll: true });
+        });
+    }
+
     const dateFormatter = new Intl.DateTimeFormat("en-IN", {
         timeZone: "Asia/Kolkata",
         weekday: "short",
