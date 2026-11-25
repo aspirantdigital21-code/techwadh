@@ -75,7 +75,10 @@
                 <span class="tw-timezone">India (IST)</span>
             </div>
 
-            <span class="tw-mobile-clock" id="tw-mobile-clock"></span>
+            <div class="tw-mobile-clock">
+                <span id="tw-mobile-date"></span>
+                <span id="tw-mobile-time"></span>
+            </div>
 
             <!-- Theme and language controls -->
             {{- $lsenabled := (or (not site.Params.disableThemeToggle) (and (not site.Params.disableLangToggle) (hugo.IsMultilingual))) }}
@@ -147,24 +150,27 @@
         hour12: true
     });
 
-    const mobileTimeFormatter = new Intl.DateTimeFormat("en-IN", {
+    const mobileDateFormatter = new Intl.DateTimeFormat("en-IN", {
         timeZone: "Asia/Kolkata",
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: true
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
     });
-    const mobileClock = document.getElementById("tw-mobile-clock");
+    const mobileDate = document.getElementById("tw-mobile-date");
+    const mobileTime = document.getElementById("tw-mobile-time");
 
     function updateTechWadhClock() {
         const now = new Date();
         const date = document.getElementById("tw-live-date");
         const time = document.getElementById("tw-live-time");
         if (date) date.textContent = dateFormatter.format(now);
-        if (time) time.textContent = timeFormatter.format(now);
-        if (mobileClock) {
-            const mobileTime = mobileTimeFormatter.format(now).toUpperCase() + " IST";
-            if (mobileClock.textContent !== mobileTime) mobileClock.textContent = mobileTime;
+        const formattedTime = timeFormatter.format(now);
+        if (time) time.textContent = formattedTime;
+        if (mobileDate) {
+            const formattedDate = mobileDateFormatter.format(now);
+            if (mobileDate.textContent !== formattedDate) mobileDate.textContent = formattedDate;
         }
+        if (mobileTime) mobileTime.textContent = formattedTime.toUpperCase() + " IST";
     }
 
     updateTechWadhClock();
