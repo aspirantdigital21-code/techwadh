@@ -75,6 +75,8 @@
                 <span class="tw-timezone">India (IST)</span>
             </div>
 
+            <span class="tw-mobile-clock" id="tw-mobile-clock"></span>
+
             <!-- Theme and language controls -->
             {{- $lsenabled := (or (not site.Params.disableThemeToggle) (and (not site.Params.disableLangToggle) (hugo.IsMultilingual))) }}
             {{- if $lsenabled }}
@@ -145,12 +147,24 @@
         hour12: true
     });
 
+    const mobileTimeFormatter = new Intl.DateTimeFormat("en-IN", {
+        timeZone: "Asia/Kolkata",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true
+    });
+    const mobileClock = document.getElementById("tw-mobile-clock");
+
     function updateTechWadhClock() {
         const now = new Date();
         const date = document.getElementById("tw-live-date");
         const time = document.getElementById("tw-live-time");
         if (date) date.textContent = dateFormatter.format(now);
         if (time) time.textContent = timeFormatter.format(now);
+        if (mobileClock) {
+            const mobileTime = mobileTimeFormatter.format(now).toUpperCase() + " IST";
+            if (mobileClock.textContent !== mobileTime) mobileClock.textContent = mobileTime;
+        }
     }
 
     updateTechWadhClock();

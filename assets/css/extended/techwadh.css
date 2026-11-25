@@ -1333,3 +1333,24 @@ body.list { background: var(--theme); }
   .tw-archive-with-cover { grid-template-columns: 64px minmax(0, 1fr); column-gap: 10px; }
   .tw-archive-with-cover .archive-entry-title { font-size: .98rem; }
 }
+
+.tw-mobile-clock { display: none; }
+
+@media (min-width: 360px) and (max-width: 760px) {
+  .header-nav .logo {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .header-nav .tw-mobile-clock {
+    display: block;
+    grid-area: 1 / 2;
+    justify-self: center;
+    white-space: nowrap;
+    color: var(--tw-editorial-ink);
+    font-size: 11px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .header-nav .logo-switches { grid-area: 1 / 3; }
+}
