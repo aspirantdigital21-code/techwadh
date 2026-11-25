@@ -1060,16 +1060,24 @@ html {
   .tw-share-panel { scroll-margin-top: 12px; }
 }
 
-/* Editorial homepage */
-body:has(.tw-home) {
+/* TechWadh editorial styling */
+:root {
   --tw-editorial-ink: #242821;
   --tw-editorial-accent: #7b482a;
-  background: #f7f3ec;
+  --theme: #f7f3ec;
+  --entry: #fffdf8;
+  --tw-soft: #f1ebe1;
+  --tw-line: #e6ddd0;
+  --tw-blue: #7b482a;
 }
-:root[data-theme="dark"] body:has(.tw-home) {
+:root[data-theme="dark"] {
   --tw-editorial-ink: #f5f1e7;
   --tw-editorial-accent: #efb68d;
-  background: #151a16;
+  --theme: #151a16;
+  --entry: #202720;
+  --tw-soft: #293329;
+  --tw-line: #3b483c;
+  --tw-blue: #efb68d;
 }
 .tw-editorial-intro {
   position: relative;
@@ -1122,22 +1130,19 @@ body:has(.tw-home) {
 .tw-editorial-visual {
   position: absolute;
   inset: 0 0 0 45%;
-  background:
-    linear-gradient(90deg, #18251e, transparent 37%),
-    repeating-radial-gradient(ellipse at 72% 48%, transparent 0 13px, #ccab7040 14px 15px, transparent 16px 25px),
-    radial-gradient(ellipse at 72% 50%, #b36f45 0, #72603c 23%, #324831 47%, #18251e 75%);
+  background: var(--tw-hero-art);
   transform: skewY(-7deg) scale(1.16);
 }
-body:has(.tw-home) .tw-trending-bar {
+.tw-trending-bar {
   background: var(--entry);
   color: var(--tw-editorial-ink);
   border-bottom: 1px solid var(--tw-line);
 }
-body:has(.tw-home) .tw-trending-label { background: var(--tw-soft); color: var(--tw-editorial-accent); }
-body:has(.tw-home) .tw-trending-items a:focus-visible { outline-color: var(--tw-editorial-accent); }
-body:has(.tw-home) .header-nav .logo { min-height: 53px; }
-body:has(.tw-home) .tw-tagline { display: none; }
-body:has(.tw-home) .tw-brand > a {
+.tw-trending-label { background: var(--tw-soft); color: var(--tw-editorial-accent); }
+.tw-trending-items a:focus-visible { outline-color: var(--tw-editorial-accent); }
+.header-nav .logo { min-height: 53px; }
+.tw-tagline { display: none; }
+.tw-brand > a {
   color: var(--tw-editorial-ink);
   background: none;
   -webkit-text-fill-color: currentColor;
@@ -1174,12 +1179,12 @@ body:has(.tw-home) .tw-brand > a {
 .tw-home .tw-latest-copy { display: block; position: relative; padding: 18px 42px 18px 0; }
 .tw-home .tw-latest-arrow { position: absolute; right: 0; top: 18px; color: var(--tw-editorial-accent); }
 .tw-home .tw-latest-copy:hover h3 { color: var(--tw-editorial-accent); }
-body:has(.tw-home) .footer-links { padding-block: 12px; }
+.footer-links { padding-block: 12px; }
 
 @media (max-width: 760px) {
-  body:has(.tw-home) .main { padding-block-start: 8px; }
-  body:has(.tw-home) .header-nav .logo { gap: 2px 10px; }
-  body:has(.tw-home) .tw-main-menu a { padding: 8px 12px; }
+  .main { margin-top: 0; padding-block-start: 8px; }
+  .header-nav .logo { gap: 2px 10px; }
+  .tw-main-menu a { padding: 8px 12px; }
   .tw-editorial-intro { display: block; min-height: 0; padding: 27px 20px; }
   .tw-editorial-intro h1 { font-size: clamp(2.5rem, 10vw, 4.25rem); }
   .tw-editorial-intro p { margin-top: 15px; }
@@ -1191,3 +1196,32 @@ body:has(.tw-home) .footer-links { padding-block: 12px; }
   .tw-home .tw-card-body { padding: 15px; }
   .tw-home .tw-feature-lead .tw-card-body h3 { font-size: 1.3rem; }
 }
+
+:root {
+  --tw-hero-art:
+    linear-gradient(90deg, #18251e, transparent 37%),
+    repeating-radial-gradient(ellipse at 72% 48%, transparent 0 13px, #ccab7040 14px 15px, transparent 16px 25px),
+    radial-gradient(ellipse at 72% 50%, #b36f45 0, #72603c 23%, #324831 47%, #18251e 75%);
+}
+
+/* Inner pages share the home hero palette, using their own page title. */
+.main :is(.page-header, .post-header, .not-found) {
+  padding: clamp(20px, 4vw, 40px);
+  border-radius: 12px;
+  background: var(--tw-hero-art) right center / min(70%, 600px) 100% no-repeat, #18251e;
+  color: #f9f4e8;
+  --primary: #f9f4e8;
+  --secondary: #dfdfd0;
+  --tw-blue: #f6c49f;
+}
+.main :is(.page-header, .post-header) h1 { color: var(--primary); overflow-wrap: anywhere; }
+.main :is(.page-header, .post-header) :is(a, button):focus-visible { outline-color: #f6c49f; }
+.main .post-header .tw-share-top { background: #f5c49e; border-color: transparent; color: #23251d; }
+.main .not-found {
+  position: static;
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  font-size: clamp(3rem, 12vw, 8rem);
+}
+.terms-tags li a:hover, .post-tags li a:hover { color: var(--theme); }
