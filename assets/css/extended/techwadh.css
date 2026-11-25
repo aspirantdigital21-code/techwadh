@@ -935,3 +935,21 @@ html {
   font-weight: 750;
   margin-left: 8px;
 }
+
+@media (max-width: 760px) {
+  .tw-category-card {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .tw-category-card strong {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
+
+@media (max-width: 520px) {
+  .tw-category-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
