@@ -17,6 +17,7 @@ defaultContentLanguageInSubdir = false
   posts = "/:slug/"
 
 [params]
+  images = ["images/techwadh-share.jpg"]
   author = "TechWadh Editorial Team"
   defaultTheme = "auto"
   ShowReadingTime = true

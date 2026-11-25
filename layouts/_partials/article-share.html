@@ -1,0 +1,28 @@
+{{- $hi := eq .Language.Lang "hi" -}}
+{{- $url := .Permalink -}}
+{{- $title := .Title | plainify -}}
+<section id="article-share" class="tw-share-panel" aria-labelledby="article-share-title"
+  data-url="{{ $url }}" data-title="{{ $title }}"
+  data-copied="{{ cond $hi "लिंक कॉपी हो गया।" "Link copied." }}"
+  data-manual="{{ cond $hi "चुना हुआ लिंक कॉपी करें।" "Copy the selected link." }}">
+  <h2 id="article-share-title">{{ cond $hi "यह लेख शेयर करें" "Share this article" }}</h2>
+  <div class="tw-share-actions">
+    <a class="tw-share-button tw-share-whatsapp" target="_blank" rel="noopener noreferrer"
+      href="https://wa.me/?text={{ printf "%s\n%s" $title $url }}">WhatsApp</a>
+    <button class="tw-share-button" type="button" data-copy-link hidden>{{ cond $hi "लिंक कॉपी करें" "Copy link" }}</button>
+    <details class="tw-share-options">
+      <summary class="tw-share-button">{{ cond $hi "और विकल्प" "More options" }}</summary>
+      <ul>
+        <li><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u={{ $url }}">Facebook</a></li>
+        <li><a target="_blank" rel="noopener noreferrer" href="https://x.com/intent/tweet?text={{ $title }}&amp;url={{ $url }}">X</a></li>
+        <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url={{ $url }}">LinkedIn</a></li>
+        <li><a target="_blank" rel="noopener noreferrer" href="https://t.me/share/url?url={{ $url }}&amp;text={{ $title }}">Telegram</a></li>
+      </ul>
+    </details>
+  </div>
+  <p class="tw-share-status" role="status"></p>
+  <input class="tw-share-url" aria-label="{{ cond $hi "लेख का लिंक" "Article link" }}" type="url" value="{{ $url }}" readonly hidden>
+</section>
+{{- with resources.Get "js/article-share.js" | minify | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{- end }}

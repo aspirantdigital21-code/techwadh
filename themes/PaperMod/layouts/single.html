@@ -1,5 +1,6 @@
 {{- define "main" }}
 
+{{- $articleShare := and (eq .Section "posts") (ne .Params.disableShare true) -}}
 <article class="post-single">
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
@@ -27,6 +28,11 @@
       {{- partial "post_canonical.html" . -}}
     </div>
     {{- end }}
+    {{- if $articleShare }}
+    <a class="tw-share-button tw-share-top" href="#article-share" data-native-share>
+      {{ cond (eq .Language.Lang "hi") "शेयर करें" "Share" }} <span aria-hidden="true">↗</span>
+    </a>
+    {{- end }}
   </header>
   {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
   {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
@@ -51,10 +57,11 @@
       <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
       {{- end }}
     </ul>
+    {{- if $articleShare }}{{ partial "article-share.html" . }}{{ end }}
     {{- if (.Param "ShowPostNavLinks") }}
     {{- partial "post_nav_links.html" . }}
     {{- end }}
-    {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
+    {{- if (and (not $articleShare) site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
     {{- partial "share_icons.html" . -}}
     {{- end }}
   </footer>

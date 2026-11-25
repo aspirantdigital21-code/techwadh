@@ -1008,3 +1008,54 @@ html {
     line-height: 1;
   }
 }
+
+.tw-share-panel {
+  scroll-margin-top: 150px;
+  margin-block: 22px;
+  padding: clamp(14px, 3vw, 22px);
+  border: 1px solid var(--tw-line);
+  border-radius: 16px;
+  background: var(--tw-soft);
+}
+.tw-share-panel h2 { margin: 0 0 12px; font-size: 1.1rem; }
+.tw-share-actions, .tw-share-options ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 8px;
+}
+.tw-share-button, .tw-share-options a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--tw-line);
+  border-radius: 10px;
+  background: var(--entry);
+  color: var(--primary);
+  font-size: .88rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.tw-share-button[hidden] { display: none; }
+.tw-share-top { margin-top: 12px; }
+.tw-share-panel .tw-share-whatsapp {
+  border-color: transparent;
+  background: #146c43;
+  color: #fff;
+}
+.tw-share-options { min-width: 0; }
+.tw-share-options[open] { flex: 1 0 100%; }
+.tw-share-options summary::-webkit-details-marker { display: none; }
+.tw-share-options summary::after { content: "▾"; }
+.tw-share-options[open] summary::after { content: "▴"; }
+.tw-share-options ul { list-style: none; margin: 8px 0 0; padding: 0; }
+.tw-share-button:hover, .tw-share-options a:hover { text-decoration: underline; }
+.tw-share-status:empty { display: none; }
+.tw-share-status { margin-top: 8px; font-size: .88rem; }
+.tw-share-url { width: 100%; margin-top: 8px; padding: 8px; }
+
+@media (max-width: 760px) {
+  .tw-share-panel { scroll-margin-top: 12px; }
+}
