@@ -9,11 +9,10 @@ translationKey = "ssc-cgl-exam-guide-2026"
 categories = ["Government Exams", "Career", "Education"]
 tags = ["SSC CGL", "SSC CGL 2026", "सरकारी नौकरी", "परीक्षा की तैयारी", "Staff Selection Commission"]
 keywords = ["SSC CGL 2026", "SSC CGL योग्यता", "SSC CGL परीक्षा पैटर्न", "SSC CGL सिलेबस", "SSC CGL सैलरी"]
+featured = true
 ShowToc = true
 ShowReadingTime = true
 +++
-
-# SSC CGL 2026: योग्यता, परीक्षा पैटर्न, सिलेबस और सैलरी की पूरी जानकारी
 
 **Staff Selection Commission Combined Graduate Level (SSC CGL) परीक्षा** भारत की प्रमुख सरकारी भर्ती परीक्षाओं में से एक है। इसके माध्यम से केंद्र सरकार के मंत्रालयों, विभागों और संगठनों में Group B और Group C पदों पर भर्ती की जाती है।
 
