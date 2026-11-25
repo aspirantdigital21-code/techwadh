@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 set -euo pipefail
 
@@ -12,5 +11,5 @@ else
     fi
 
     echo "Building preview website..."
-    hugo --baseURL "$CF_PAGES_URL" --gc --minify
+    hugo --environment preview --baseURL "$CF_PAGES_URL" --gc --minify
 fi

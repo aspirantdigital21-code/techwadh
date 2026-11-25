@@ -5,8 +5,6 @@ translationKey: "disclaimer"
 draft: false
 ---
 
-# अस्वीकरण (Disclaimer)
-
 **अंतिम अपडेट: 20 नवंबर 2026**
 
 TechWadh (https://techwadh.in/) पर प्रकाशित जानकारी सामान्य सूचना और शिक्षा के उद्देश्य से दी जाती है।

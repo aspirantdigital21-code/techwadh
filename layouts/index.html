@@ -1,6 +1,6 @@
 
 {{- define "main" -}}
-<main class="tw-home">
+<div class="tw-home">
   {{- $homeInfo := site.Params.homeInfoParams }}
   {{- $heroTitle := "TechWadh : Where Native Roots Meet Modern Tech" }}
   {{- $heroDescription := "Born from the roots of Patwadh Kautuk, Techwadh brings together practical technology insights, useful digital tools, and thoughtful builds, crafted simply and clearly for everyday use." }}
@@ -110,25 +110,30 @@
   </section>
   {{- end }}
 
-  {{- $categoryNames := slice }}
-  {{- range $name, $taxonomy := site.Taxonomies.categories }}
-    {{- $categoryNames = $categoryNames | append $name }}
+  {{- $topics := slice }}
+  {{- range slice "artificial-intelligence" "ai-tools" "smartphones" "laptops" "government-jobs" "government-exams" }}
+    {{- with site.GetPage (printf "/categories/%s" .) }}
+      {{- $topics = $topics | append .Page }}
+    {{- end }}
   {{- end }}
 
-  {{- if $categoryNames }}
+  {{- if $topics }}
   <section class="tw-section">
     <div class="tw-section-heading">
       <div>
         <p class="tw-eyebrow">DISCOVER</p>
         <h2>Explore topics</h2>
       </div>
+      {{- with site.GetPage "/categories" }}
+      <a href="{{ .RelPermalink }}">All categories <span aria-hidden="true">→</span></a>
+      {{- end }}
     </div>
 
     <div class="tw-category-grid">
-      {{- range first 6 (sort $categoryNames) }}
-      <a class="tw-category-card" href="{{ printf "categories/%s/" (. | urlize) | relLangURL }}">
+      {{- range $topics }}
+      <a class="tw-category-card" href="{{ .RelPermalink }}">
         <span class="tw-category-icon">✳</span>
-        <strong>{{ . | title }}</strong>
+        <strong>{{ .LinkTitle }}</strong>
         <span class="tw-category-arrow">↗</span>
       </a>
       {{- end }}
@@ -136,8 +141,8 @@
   </section>
   {{- end }}
 
-  {{/* All non-featured articles appear in Latest */}}
-  {{- $latest := where $pages "Params.featured" "!=" true }}
+  {{/* Exclude cards already displayed above. */}}
+  {{- $latest := complement $featured $pages }}
   {{- $latest = first 6 $latest.ByDate.Reverse }}
 
   {{- if $latest }}
@@ -178,5 +183,5 @@
     <p>Explore practical guides, useful technology updates and ideas that make the digital world easier to understand.</p>
     <a class="tw-button tw-button-primary" href="{{ "search/" | relLangURL }}">Find something useful</a>
   </section>
-</main>
+</div>
 {{- end -}}

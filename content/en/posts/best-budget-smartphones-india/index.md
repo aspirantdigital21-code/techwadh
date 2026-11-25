@@ -14,8 +14,6 @@ ShowToc = true
 ShowReadingTime = true
 +++
 
-# Best Budget Smartphones in India (November 2026)
-
 You do not need to spend flagship money to get a smartphone that handles everyday work, streaming, social media, photography and casual gaming well. The challenge is choosing the right compromises: one phone may offer a huge battery, another a better display, while a third promises longer software support.
 
 This guide focuses on **value-for-money smartphones around ₹10,000–₹20,000** that are worth comparing in India as of **19 November 2026**. We have grouped the picks by the kind of buyer they suit instead of pretending that one phone is perfect for everyone.

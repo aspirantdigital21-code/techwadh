@@ -5,8 +5,6 @@ translationKey: "disclaimer"
 draft: false
 ---
 
-# Disclaimer
-
 **Last updated: November 20, 2026**
 
 The information published on TechWadh (https://techwadh.in/) is provided for general informational and educational purposes.

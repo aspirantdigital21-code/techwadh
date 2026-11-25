@@ -137,7 +137,7 @@ Station Master पद के लिए **A-2 मेडिकल स्टैं�
 |---|---|
 | ऑनलाइन आवेदन | [RRB Apply Portal](https://www.rrbapply.gov.in/) |
 | विस्तृत नोटिफिकेशन – CEN 08/2026 | [नोटिफिकेशन PDF डाउनलोड करें](https://rrb.indianrailways.gov.in/-/image/1793016771817CEN_08_2026_StationMaster.pdf/examsDocuments) |
-| RRB की आधिकारिक वेबसाइट | [rrb.indianrailways.gov.in](https://rrb.indianrailways.gov.in/) |
+| RRB की आधिकारिक वेबसाइट | [RRB वेबसाइट](https://rrb.indianrailways.gov.in/) |
 | रेल मंत्रालय की घोषणा | [PIB प्रेस रिलीज](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2329071&lang=1&reg=3) |
 
 केवल आधिकारिक आवेदन पोर्टल और RRB वेबसाइट का इस्तेमाल करें। रेलवे में नौकरी दिलाने का दावा करने वाले एजेंट या थर्ड पार्टी से सावधान रहें।

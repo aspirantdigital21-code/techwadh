@@ -30,10 +30,10 @@ defaultContentLanguageInSubdir = false
 [params.fuseOpts]
   isCaseSensitive = false
   shouldSort = true
-  threshold = 0.0
-  distance = 0
+  threshold = 0.25
+  ignoreLocation = true
   minMatchCharLength = 2
-  keys = ["title", "summary", "content"]
+  keys = [{ name = "title", weight = 3 }, { name = "keywords", weight = 2 }, { name = "summary", weight = 1 }, { name = "content", weight = 0.5 }]
 
 [languages.en]
   label = "English"

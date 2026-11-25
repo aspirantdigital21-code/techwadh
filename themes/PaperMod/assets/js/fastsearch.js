@@ -3,6 +3,13 @@ import * as params from '@params';
 const resList = document.getElementById('searchResults');
 const sInput = document.getElementById('searchInput');
 const searchBox = document.getElementById('searchbox');
+const status = document.getElementById('searchStatus');
+const retry = document.getElementById('searchRetry');
+
+const showStatus = (message = '') => {
+    status.textContent = message;
+    status.hidden = !message;
+};
 
 let fuse;
 let currentElement = null;
@@ -49,6 +56,7 @@ const reset = () => {
     firstResult = null;
     lastResult = null;
     resList.innerHTML = '';
+    if (fuse) showStatus();
     sInput.value = '';
     sInput.focus();
 };
@@ -115,12 +123,14 @@ const performSearch = () => {
     const query = sInput.value.trim();
     if (!query) {
         renderResults([]);
+        showStatus();
         return;
     }
 
     const searchOptions = params.fuseOpts?.limit ? { limit: params.fuseOpts.limit } : undefined;
     const results = searchOptions ? fuse.search(query, searchOptions) : fuse.search(query);
     renderResults(results);
+    showStatus(results.length ? '' : searchBox.dataset.empty);
 };
 
 const initSearch = async () => {
@@ -129,7 +139,8 @@ const initSearch = async () => {
     }
 
     sInput.disabled = false;
-    sInput.focus();
+    retry.hidden = true;
+    showStatus(searchBox.dataset.loading);
 
     try {
         const response = await fetch('../index.json');
@@ -138,15 +149,17 @@ const initSearch = async () => {
         }
 
         const data = await response.json();
-        if (data) {
-            fuse = new Fuse(data, buildFuseOptions());
-        }
+        fuse = new Fuse(data, buildFuseOptions());
+        performSearch();
     } catch (error) {
+        showStatus(searchBox.dataset.error);
+        retry.hidden = false;
         console.error(error);
     }
 };
 
 window.addEventListener('load', initSearch);
+retry?.addEventListener('click', initSearch);
 
 sInput?.addEventListener('input', debounce(performSearch, 150));
 
@@ -161,7 +174,7 @@ document.addEventListener('keydown', (event) => {
     const active = document.activeElement;
     const isInSearchBox = searchBox?.contains(active);
 
-    if (key === 'Escape') {
+    if (key === 'Escape' && isInSearchBox) {
         reset();
         return;
     }

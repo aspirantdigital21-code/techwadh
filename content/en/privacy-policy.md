@@ -5,8 +5,6 @@ translationKey: "privacy-policy"
 draft: false
 ---
 
-# Privacy Policy
-
 **Last updated: November 20, 2026**
 
 At TechWadh (https://techwadh.in/), we respect your privacy. This Privacy Policy explains what information may be collected when you visit our website and how it may be used.

@@ -5,8 +5,6 @@ translationKey: "about"
 draft: false
 ---
 
-# About TechWadh
-
 TechWadh is a technology-focused website created to make technology easier to understand and use.
 
 We cover topics that matter to everyday users, including:

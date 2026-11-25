@@ -137,7 +137,7 @@ Applications are accepted online through the official RRB application portal.
 |---|---|
 | Apply online | [RRB Apply Portal](https://www.rrbapply.gov.in/) |
 | Detailed notification – CEN 08/2026 | [Download notification PDF](https://rrb.indianrailways.gov.in/-/image/1793016771817CEN_08_2026_StationMaster.pdf/examsDocuments) |
-| RRB official website | [rrb.indianrailways.gov.in](https://rrb.indianrailways.gov.in/) |
+| RRB official website | [RRB website](https://rrb.indianrailways.gov.in/) |
 | Ministry of Railways announcement | [PIB press release](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2329071&lang=1&reg=3) |
 
 Use only the official application portal and RRB websites. Avoid agents or third parties claiming they can secure a railway job.

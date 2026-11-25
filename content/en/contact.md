@@ -5,8 +5,6 @@ translationKey: "contact"
 draft: false
 ---
 
-# Contact TechWadh
-
 We'd love to hear from you.
 
 If you have a question, feedback, correction, or a business enquiry related to TechWadh, you can contact us by email.
