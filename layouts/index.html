@@ -1,60 +1,18 @@
 
 {{- define "main" -}}
 <div class="tw-home">
-  {{- $homeInfo := site.Params.homeInfoParams }}
-  {{- $heroTitle := "TechWadh : Where Native Roots Meet Modern Tech" }}
-  {{- $heroDescription := "Born from the roots of Patwadh Kautuk, Techwadh brings together practical technology insights, useful digital tools, and thoughtful builds, crafted simply and clearly for everyday use." }}
-  {{- if eq site.Language.Lang "hi" }}
-    {{- $heroTitle = "स्थानीय जड़ों से आधुनिक तकनीक तक — Techwadh" }}
-    {{- $heroDescription = "Patwadh Kautuk की जड़ों से जन्मा Techwadh, उपयोगी टेक जानकारी, डिजिटल टूल्स और सोच-समझकर बनाए गए समाधानों को सरल भाषा में आपके सामने लाता है।" }}
-  {{- end }}
-  {{- with $homeInfo.Title }}{{ $heroTitle = . }}{{ end }}
-
-  <section class="tw-hero">
-    <div class="tw-hero-copy">
-      <p class="tw-eyebrow">
-        {{- if eq site.Language.Lang "hi" -}}
-          स्थानीय जड़ें। डिजिटल कौशल। टेक के लिए निर्मित।
-        {{- else -}}
-          Local Roots. Digital Craft. Built for Tech.
-        {{- end -}}
-      </p>
-
-      <h1>
-        {{- if strings.HasPrefix $heroTitle "TechWadh" -}}
-          <span class="tw-title-blue">T</span>ech<span class="tw-title-blue">W</span>adh{{ strings.TrimPrefix "TechWadh" $heroTitle | markdownify }}
-        {{- else -}}
-          {{ $heroTitle | markdownify }}
-        {{- end -}}
-      </h1>
-
-      <div class="tw-hero-description">
-        {{- with $homeInfo.Content }}
-          {{ . | $.Page.RenderString }}
-        {{- else }}
-          <p>{{ $heroDescription }}</p>
-        {{- end }}
-      </div>
-
-      <div class="tw-hero-actions">
-        <a class="tw-button tw-button-primary" href="{{ "archives/" | relLangURL }}">
-          {{- if eq site.Language.Lang "hi" -}}लेख पढ़ें{{- else -}}Explore articles{{- end -}}
-        </a>
-        <a class="tw-button tw-button-secondary" href="{{ "search/" | relLangURL }}">
-          {{- if eq site.Language.Lang "hi" -}}खोजें{{- else -}}Search TechWadh{{- end -}}
-        </a>
+  {{- $hi := eq site.Language.Lang "hi" }}
+  <section class="tw-editorial-intro">
+    <div class="tw-editorial-copy">
+      <p class="tw-editorial-roots">{{ cond $hi "Patwadh Kautuk की जड़ों से" "Rooted in Patwadh Kautuk" }}</p>
+      <h1>{{ cond $hi "रोज़मर्रा की टेक।" "Technology," }}<br><em>{{ cond $hi "आसान भाषा में।" "made useful." }}</em></h1>
+      <p>{{ cond $hi "एआई टूल्स, फ़ोन खरीदने की गाइड और डिजिटल दुनिया की ज़रूरी जानकारी।" "AI tools, buying guides and clear explanations for everyday digital life." }}</p>
+      <div class="tw-editorial-actions">
+        <a class="tw-editorial-primary" href="#featured-stories">{{ cond $hi "चुनिंदा लेख पढ़ें" "Explore stories" }} <span aria-hidden="true">→</span></a>
+        <a href="{{ "search/" | relLangURL }}">{{ cond $hi "लेख खोजें" "Search articles" }}</a>
       </div>
     </div>
-
-    <div class="tw-hero-art" aria-hidden="true">
-      <div class="tw-brand-mark">
-        <div class="tw-brand-tile">
-          <span>TW</span>
-        </div>
-        <div class="tw-brand-wordmark">TECHWADH</div>
-        <div class="tw-brand-caption">ROOTED IN IDEAS. BUILT FOR WHAT'S NEXT.</div>
-      </div>
-    </div>
+    <div class="tw-editorial-visual" aria-hidden="true"></div>
   </section>
 
   {{- $pages := where site.RegularPages "Draft" false }}
@@ -66,10 +24,9 @@
   {{- $featured = first 3 $featured.ByDate.Reverse }}
 
   {{- if $featured }}
-  <section class="tw-section">
+  <section class="tw-section" id="featured-stories">
     <div class="tw-section-heading">
       <div>
-        <p class="tw-eyebrow">EDITOR'S PICKS</p>
         <h2>Featured stories</h2>
       </div>
       <a href="{{ "archives/" | relLangURL }}">View all articles <span aria-hidden="true">→</span></a>
@@ -86,7 +43,7 @@
           {{- else }}
           <div class="tw-card-art">
             <span>{{ with $page.Params.categories }}{{ index . 0 }}{{ else }}TECHWADH{{ end }}</span>
-            <b>TW</b>
+            <b aria-hidden="true">↗︎</b>
           </div>
           {{- end }}
 
@@ -121,7 +78,6 @@
   <section class="tw-section">
     <div class="tw-section-heading">
       <div>
-        <p class="tw-eyebrow">DISCOVER</p>
         <h2>Explore topics</h2>
       </div>
       {{- with site.GetPage "/categories" }}
@@ -149,7 +105,6 @@
   <section class="tw-section">
     <div class="tw-section-heading">
       <div>
-        <p class="tw-eyebrow">FRESH OFF THE PRESS</p>
         <h2>Latest articles</h2>
       </div>
       <a href="{{ "archives/" | relLangURL }}">All articles <span aria-hidden="true">→</span></a>
@@ -158,30 +113,20 @@
     <div class="tw-latest-list">
       {{- range $latest }}
       <article class="tw-latest-item">
-        <div class="tw-latest-date">
-          <span>{{ .Date.Format "02" }}</span>
-          {{ .Date.Format "Jan 2006" }}
-        </div>
-        <div class="tw-latest-copy">
-          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <a class="tw-latest-copy" href="{{ .RelPermalink }}">
+          <h3>{{ .Title }}</h3>
           <p>{{ .Description | default .Summary | plainify | htmlUnescape | truncate 125 }}</p>
           <div class="tw-latest-meta">
-            {{ .ReadingTime }} min read
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time> · {{ .ReadingTime }} min read
             {{- with .Params.categories }} <span>·</span> {{ index . 0 }}{{ end }}
           </div>
-        </div>
-        <a class="tw-latest-arrow" href="{{ .RelPermalink }}" aria-label="Read {{ .Title }}">↗</a>
+          <span class="tw-latest-arrow" aria-hidden="true">↗</span>
+        </a>
       </article>
       {{- end }}
     </div>
   </section>
   {{- end }}
 
-  <section class="tw-bottom-cta">
-    <p class="tw-eyebrow">THE WORLD. EXPLAINED FOR THE NEXT GENERATION.</p>
-    <h2>Curious about what’s next?</h2>
-    <p>Explore practical guides, useful technology updates and ideas that make the digital world easier to understand.</p>
-    <a class="tw-button tw-button-primary" href="{{ "search/" | relLangURL }}">Find something useful</a>
-  </section>
 </div>
 {{- end -}}
