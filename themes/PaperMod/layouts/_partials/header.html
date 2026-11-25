@@ -1,16 +1,23 @@
 <header class="header">
 
-    <!-- Trending bar -->
-    <div class="tw-trending-bar">
-        <div class="tw-trending-label">⚡ Trending:</div>
+    {{- $hi := eq site.Language.Lang "hi" }}
+    {{- $topicsLabel := cond $hi "प्रमुख विषय" "Quick topics" }}
+    <nav class="tw-trending-bar" aria-label="{{ $topicsLabel }}">
+        <span class="tw-trending-label">{{ $topicsLabel }}</span>
         <div class="tw-trending-items">
-            <span>Latest Tech News</span>
-            <span>AI Tools</span>
-            <span>Mobile Updates</span>
-            <span>Govt Exams</span>
-            <span>Gen-Z Guides</span>
+            {{- range slice
+                (dict "slug" "ai-tools" "en" "AI Tools" "hi" "AI टूल्स")
+                (dict "slug" "smartphones" "en" "Smartphones" "hi" "स्मार्टफ़ोन")
+                (dict "slug" "government-jobs" "en" "Govt Jobs" "hi" "सरकारी नौकरियाँ")
+                (dict "slug" "government-exams" "en" "Govt Exams" "hi" "सरकारी परीक्षाएँ") }}
+                {{- $topic := . }}
+                {{- with site.GetPage (printf "/categories/%s" .slug) }}
+                <a href="{{ .RelPermalink }}">{{ cond $hi $topic.hi $topic.en }}</a>
+                {{- end }}
+            {{- end }}
         </div>
-    </div>
+        <span class="tw-topics-hint" aria-hidden="true">›</span>
+    </nav>
 
     <nav class="header-nav">
         <div class="logo">

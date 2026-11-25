@@ -984,3 +984,27 @@ html {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.tw-trending-items {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tw-trending-items::-webkit-scrollbar { display: none; }
+.tw-trending-items a {
+  flex: 0 0 auto;
+  padding: 4px 3px;
+  color: inherit;
+}
+.tw-trending-items a:hover { text-decoration: underline; }
+.tw-trending-items a:focus-visible { outline: 2px solid #fff; outline-offset: -2px; }
+.tw-topics-hint { display: none; }
+
+@media (max-width: 600px) {
+  .tw-topics-hint {
+    display: block;
+    flex: 0 0 auto;
+    font-size: 1.15rem;
+    line-height: 1;
+  }
+}
