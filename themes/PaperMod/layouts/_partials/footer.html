@@ -12,6 +12,14 @@
         {{- end }}
     {{- end }}
 
+    {{- with site.GetPage "/developer" }}
+    <span>
+        {{- if not site.Params.footer.hideCopyright }} · {{ end -}}
+        {{ cond (eq site.Language.Lang "hi") "डेवलपर" "Developed by" }}
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </span>
+    {{- end }}
+
     {{- with site.Params.footer.text }}
         {{ . | markdownify }}
     {{- end }}
