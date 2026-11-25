@@ -1079,6 +1079,8 @@ html {
   --tw-line: #3b483c;
   --tw-blue: #efb68d;
 }
+body.list { background: var(--theme); }
+
 .tw-editorial-intro {
   position: relative;
   isolation: isolate;
