@@ -38,7 +38,7 @@
         <a class="tw-card-link" href="{{ $page.RelPermalink }}">
           {{- with $page.Params.cover.image }}
           <div class="tw-card-image">
-            <img src="{{ . | absURL }}" alt="{{ $page.Params.cover.alt | default $page.Title }}" loading="lazy">
+            {{ partial "home-article-cover.html" (dict "page" $page "size" "feature") }}
           </div>
           {{- else }}
           <div class="tw-card-art">
@@ -113,7 +113,10 @@
     <div class="tw-latest-list">
       {{- range $latest }}
       <article class="tw-latest-item">
-        <a class="tw-latest-copy" href="{{ .RelPermalink }}">
+        <a class="tw-latest-copy{{ if .Params.cover.image }} tw-latest-with-cover{{ end }}" href="{{ .RelPermalink }}">
+          {{- if .Params.cover.image }}
+          <span class="tw-latest-thumb">{{ partial "home-article-cover.html" (dict "page" . "size" "thumb") }}</span>
+          {{- end }}
           <h3>{{ .Title }}</h3>
           <p>{{ .Description | default .Summary | plainify | htmlUnescape | truncate 125 }}</p>
           <div class="tw-latest-meta">

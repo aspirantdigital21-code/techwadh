@@ -12,6 +12,11 @@ keywords = ["SSC CGL 2026", "SSC CGL eligibility", "SSC CGL exam pattern", "SSC 
 featured = true
 ShowToc = true
 ShowReadingTime = true
+
+[cover]
+image = "images/covers/ssc.png"
+alt = "Exam preparation desk with a notebook, pencil and clock"
+
 +++
 
 The **Staff Selection Commission Combined Graduate Level (SSC CGL) Examination** is one of India's major recruitment examinations for graduates. It is conducted to fill Group B and Group C posts in central government ministries, departments and organisations.

@@ -12,6 +12,11 @@ keywords = ["SSC CGL 2026", "SSC CGL योग्यता", "SSC CGL परी�
 featured = true
 ShowToc = true
 ShowReadingTime = true
+
+[cover]
+image = "images/covers/ssc.png"
+alt = "कॉपी, पेंसिल और घड़ी के साथ परीक्षा की तैयारी की मेज़"
+
 +++
 
 **Staff Selection Commission Combined Graduate Level (SSC CGL) परीक्षा** भारत की प्रमुख सरकारी भर्ती परीक्षाओं में से एक है। इसके माध्यम से केंद्र सरकार के मंत्रालयों, विभागों और संगठनों में Group B और Group C पदों पर भर्ती की जाती है।

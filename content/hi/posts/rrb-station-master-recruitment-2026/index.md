@@ -12,6 +12,11 @@ keywords = ["RRB Station Master Recruitment 2026", "RRB Station Master 2026 आ�
 featured = true
 ShowToc = true
 ShowReadingTime = true
+
+[cover]
+image = "images/covers/railway.png"
+alt = "रेलवे स्टेशन पर खड़ी भारतीय यात्री ट्रेन"
+
 +++
 
 भारतीय रेलवे ने Centralised Employment Notice **CEN No. 08/2026** के तहत **Station Master** पदों के लिए अलग भर्ती प्रक्रिया शुरू की है। रेल मंत्रालय ने Railway Recruitment Boards (RRBs) के माध्यम से कुल **1,265 पदों** की घोषणा की है। इससे पात्र ग्रेजुएट उम्मीदवारों को Level 6 के इस रेलवे पद के लिए आवेदन करने का अवसर मिल रहा है।

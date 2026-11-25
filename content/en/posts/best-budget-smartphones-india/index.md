@@ -12,6 +12,11 @@ keywords = ["best budget smartphones in India", "best phones under 20000", "budg
 featured = true
 ShowToc = true
 ShowReadingTime = true
+
+[cover]
+image = "images/covers/phones.png"
+alt = "Three smartphones arranged on a desk"
+
 +++
 
 You do not need to spend flagship money to get a smartphone that handles everyday work, streaming, social media, photography and casual gaming well. The challenge is choosing the right compromises: one phone may offer a huge battery, another a better display, while a third promises longer software support.

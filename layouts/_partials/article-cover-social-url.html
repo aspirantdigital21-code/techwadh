@@ -1,0 +1,5 @@
+{{- $url := .Params.cover.image | absURL -}}
+{{- with resources.Get .Params.cover.image -}}
+  {{- $url = (.Fill "1200x630 Center jpg q86").Permalink -}}
+{{- end -}}
+{{- return $url -}}

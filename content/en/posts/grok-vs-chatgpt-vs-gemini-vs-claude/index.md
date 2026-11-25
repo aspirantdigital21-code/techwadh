@@ -12,6 +12,11 @@ keywords = ["Grok vs ChatGPT vs Gemini vs Claude", "best AI chatbot 2026", "AI t
 featured = true
 ShowToc = true
 ShowReadingTime = true
+
+[cover]
+image = "images/covers/ai.png"
+alt = "Four abstract glass forms representing AI assistants"
+
 +++
 
 AI assistants have become useful for much more than answering questions. People now use them to research topics, write articles, understand documents, generate images, debug code and automate parts of their work.

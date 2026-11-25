@@ -12,6 +12,11 @@ keywords = ["how to choose a laptop for students", "best laptop specifications f
 featured = true
 ShowToc = true
 ShowReadingTime = true
+
+[cover]
+image = "images/covers/laptop.png"
+alt = "Laptop and notebook on a student’s desk"
+
 +++
 
 Buying a laptop for school or college is a big decision. You may use it for online classes, assignments, presentations, research, coding, design projects, video editing and internships. The tricky part is that **the best laptop for one student can be the wrong laptop for another**.

@@ -1,0 +1,13 @@
+{{- $image := .page.Params.cover.image -}}
+{{- if .page.Params.cover.relative -}}
+  {{- $image = path.Join .page.RelPermalink $image -}}
+{{- end -}}
+{{- $url := $image | absURL -}}
+{{- with resources.Get $image -}}
+  {{- if eq $.size "thumb" -}}
+    {{- $url = (.Fill "192x144 Center webp q83").RelPermalink -}}
+  {{- else -}}
+    {{- $url = (.Fill "960x540 Center webp q84").RelPermalink -}}
+  {{- end -}}
+{{- end -}}
+<img src="{{ $url }}" alt="" loading="lazy" decoding="async">

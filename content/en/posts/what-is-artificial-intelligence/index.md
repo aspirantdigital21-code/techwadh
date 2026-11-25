@@ -7,8 +7,8 @@ description = "Understand artificial intelligence, how it works, its everyday us
 translationKey = "what-is-artificial-intelligence"
 robotsNoIndex = true
 [cover]
-image = "images/ai-artificial-intelligence.png"
-alt = "Artificial Intelligence neural network and digital technology"
+image = "images/covers/ai-introduction.png"
+alt = "Illustration of an artificial intelligence neural network"
 
 +++
 

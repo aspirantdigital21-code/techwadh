@@ -7,8 +7,8 @@ description = "आर्टिफिशियल इंटेलिजेंस 
 translationKey = "what-is-artificial-intelligence"
 robotsNoIndex = true
 [cover]
-image = "images/ai-artificial-intelligence.png"
-alt = "Artificial Intelligence neural network and digital technology"
+image = "images/covers/ai-introduction.png"
+alt = "आर्टिफ़िशियल इंटेलिजेंस के न्यूरल नेटवर्क का चित्र"
 +++
 
 आर्टिफिशियल इंटेलिजेंस (AI) आज हमारी रोज़मर्रा की ज़िंदगी का हिस्सा बनता जा रहा है। वॉइस असिस्टेंट और स्मार्टफोन कैमरे से लेकर चैटबॉट और वीडियो रिकमेंडेशन सिस्टम तक, AI हमारे तकनीक इस्तेमाल करने के तरीके को बदल रहा है।
