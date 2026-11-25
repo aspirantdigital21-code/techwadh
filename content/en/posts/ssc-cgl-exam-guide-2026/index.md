@@ -1,14 +1,14 @@
 +++
-title = "SSC CGL 2026: Eligibility, Exam Pattern, Syllabus, Salary & Preparation Guide"
+title = "SSC CGL 2026 Syllabus and Exam Pattern: Tier 1 vs Tier 2"
 date = "2026-11-21T12:00:00+05:30"
 draft = false
-description = "A practical guide to SSC CGL 2026 covering posts, eligibility, age limits, Tier-I and Tier-II pattern, syllabus, salary levels and preparation strategy."
-summary = "Understand SSC CGL 2026 eligibility, exam structure, syllabus, pay levels and the latest status of the 2026 examination."
+description = "Compare SSC CGL Tier 1 and Tier 2, see what to study, and check eligibility, pay levels and official notices."
+summary = "Compare SSC CGL Tier 1 and Tier 2, see what to study, and check eligibility, pay levels and official notices."
 slug = "ssc-cgl-exam-guide-2026"
 translationKey = "ssc-cgl-exam-guide-2026"
 categories = ["Government Exams", "Career", "Education"]
 tags = ["SSC CGL", "SSC CGL 2026", "Government Jobs", "Exam Preparation", "Staff Selection Commission"]
-keywords = ["SSC CGL 2026", "SSC CGL eligibility", "SSC CGL exam pattern", "SSC CGL syllabus", "SSC CGL salary"]
+keywords = ["SSC CGL 2026 syllabus Tier 1 Tier 2", "SSC CGL 2026", "SSC CGL eligibility", "SSC CGL exam pattern", "SSC CGL syllabus", "SSC CGL salary"]
 featured = true
 ShowToc = true
 ShowReadingTime = true
@@ -19,7 +19,7 @@ alt = "Exam preparation desk with a notebook, pencil and clock"
 
 +++
 
-The **Staff Selection Commission Combined Graduate Level (SSC CGL) Examination** is one of India's major recruitment examinations for graduates. It is conducted to fill Group B and Group C posts in central government ministries, departments and organisations.
+Preparing for SSC CGL 2026? **Start with the four Tier 1 areas: reasoning, general awareness, quantitative aptitude and English.** Then check the Tier 2 papers and modules that apply to your target post. The exam pattern and syllabus below help you decide what to practise first.
 
 If you are planning to prepare for SSC CGL, this guide explains the posts, eligibility, age limits, exam pattern, syllabus, pay levels and a practical preparation strategy. It also covers the current status of the 2026 examination.
 
@@ -276,3 +276,5 @@ SSC CGL offers graduates an opportunity to compete for a range of central govern
 For the 2026 cycle, Tier-I has been conducted and the answer-key challenge window has closed. Candidates should keep checking SSC for the Tier-I result and any update to the tentative December Tier-II schedule.
 
 At TechWadh, we aim to make useful information easier to understand so readers can make better-informed decisions.
+
+[Compare the RRB Station Master recruitment requirements](/rrb-station-master-recruitment-2026/)

@@ -1,14 +1,14 @@
 +++
-title = "RRB Station Master Recruitment 2026: 1,265 Vacancies, Eligibility, Salary & Apply Online"
+title = "RRB Station Master Recruitment 2026: Last Date, Eligibility and Pay"
 date = "2026-11-21T18:30:00+05:30"
 draft = false
-description = "RRB Station Master Recruitment 2026 under CEN 08/2026: check 1,265 vacancies, graduate eligibility, age limit, ₹35,400 basic pay, dates and official application links."
-summary = "Indian Railways has opened applications for Station Master under CEN 08/2026. Find key dates, eligibility, pay, application steps and official links."
+description = "Check the RRB Station Master application deadline, graduate eligibility, starting pay and official links for CEN 08/2026."
+summary = "Check the RRB Station Master application deadline, graduate eligibility, starting pay and official links for CEN 08/2026."
 slug = "rrb-station-master-recruitment-2026"
 translationKey = "rrb-station-master-recruitment-2026"
 categories = ["Government Jobs", "Railway Jobs", "Career"]
 tags = ["RRB Station Master", "Railway Recruitment 2026", "CEN 08/2026", "Government Jobs", "Indian Railways"]
-keywords = ["RRB Station Master Recruitment 2026", "RRB Station Master 2026 apply online", "CEN 08/2026", "Railway Station Master vacancy", "Station Master eligibility and salary"]
+keywords = ["RRB Station Master application last date 2026", "RRB Station Master Recruitment 2026", "RRB Station Master 2026 apply online", "CEN 08/2026", "Railway Station Master vacancy", "Station Master eligibility and salary"]
 featured = true
 ShowToc = true
 ShowReadingTime = true
@@ -19,7 +19,7 @@ alt = "An Indian passenger train at a railway station"
 
 +++
 
-Indian Railways has opened a dedicated recruitment process for **Station Master** posts under Centralised Employment Notice **CEN No. 08/2026**. The Ministry of Railways has announced **1,265 vacancies** across Railway Recruitment Boards (RRBs), giving eligible graduates an opportunity to apply for this Level 6 railway post.
+Looking for the RRB Station Master application deadline? **CEN 08/2026 lists 25 November 2026 at 11:59 p.m. IST** for submitting the form. The recruitment is open to graduates who meet the notice’s eligibility criteria, and the Ministry announced 1,265 vacancies. Check the latest official notice before relying on the schedule.
 
 Online applications opened on **27 October 2026**. The last date to submit the form is **25 November 2026, up to 11:59 PM**. Candidates should read the detailed notification and check the post's medical requirements before choosing an RRB.
 
@@ -186,3 +186,5 @@ The examination date is to be announced by the Railway Recruitment Boards. Follo
 RRB Station Master Recruitment 2026 is a dedicated opportunity for graduates seeking a career with Indian Railways. Before applying, verify the vacancy details for your chosen RRB, confirm your age and educational eligibility, and read the A-2 medical requirements. Submit the form only through the official portal and keep a copy of the confirmation.
 
 **Disclaimer:** TechWadh is an independent information website and is not affiliated with Indian Railways or any Railway Recruitment Board. Recruitment information can change through official corrigenda and notices. Candidates are responsible for checking the latest official documents before applying.
+
+[Also considering SSC CGL? Compare its exam stages](/ssc-cgl-exam-guide-2026/)

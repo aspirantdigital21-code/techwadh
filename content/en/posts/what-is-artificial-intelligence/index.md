@@ -1,22 +1,19 @@
-
 +++
-title = "What Is Artificial Intelligence? A Beginner-Friendly Guide"
+keywords = ["what is AI simple explanation with examples"]
+summary = "Learn what artificial intelligence is through phone cameras, recommendations and chatbots, and see where it can make mistakes."
+title = "What Is Artificial Intelligence? AI Explained With Everyday Examples"
 date = "2026-11-19T12:00:00+05:30"
 draft = false
-description = "Understand artificial intelligence, how it works, its everyday uses, benefits, and limitations in this beginner-friendly guide."
+description = "Learn what artificial intelligence is through phone cameras, recommendations and chatbots, and see where it can make mistakes."
 translationKey = "what-is-artificial-intelligence"
-robotsNoIndex = true
+slug = "what-is-artificial-intelligence-a-beginner-friendly-guide"
 [cover]
 image = "images/covers/ai-introduction.png"
 alt = "Illustration of an artificial intelligence neural network"
 
 +++
 
-Artificial Intelligence (AI) is becoming part of our everyday lives. From voice assistants and smartphone cameras to chatbots and recommendation systems, AI is changing how we use technology.
-
-But what exactly is Artificial Intelligence? How does it work, and why is everyone talking about it?
-
-Let's understand it in simple language.
+**Artificial intelligence (AI) is software designed to perform tasks such as spotting patterns, understanding language or generating answers.** You already see it when a phone camera identifies a scene or an app suggests a video. Those examples are a useful starting point for understanding what AI can do and why it sometimes gets things wrong.
 
 ## What Is Artificial Intelligence?
 
@@ -137,3 +134,5 @@ Understanding its basic concepts, benefits, and limitations can help anyone use 
 At TechWadh, our goal is to make technology easier to understand for everyone.
 
 **Technology of Patwadh Kautuk — Rooted in Patwadh Kautuk. Connected to the World.**
+
+[Compare four AI assistants by task](/grok-vs-chatgpt-vs-gemini-vs-claude/)

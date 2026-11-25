@@ -1,14 +1,14 @@
 +++
-title = "How to Choose a Laptop for Students in India (2026): A Practical Buying Guide"
+title = "Best Laptop Specs for Students: Is 8GB RAM Enough for College?"
 date = 2026-11-19T10:00:00+05:30
 draft = false
-description = "A practical 2026 guide to choosing a student laptop in India. Learn what processor, RAM, SSD, display, battery, weight and ports you actually need by course and budget."
-summary = "Choose a student laptop by your course and daily workload—not by brand slogans. This guide explains the specs that matter, sensible configurations and common buying mistakes."
+description = "Choose a student laptop by course, RAM, processor, SSD, battery and budget. See when 8GB is enough and when to buy 16GB."
+summary = "Choose a student laptop by course, RAM, processor, SSD, battery and budget. See when 8GB is enough and when to buy 16GB."
 slug = "how-to-choose-laptop-for-students"
 translationKey = "how-to-choose-laptop-for-students"
 categories = ["Laptops", "Buying Guides"]
 tags = ["student laptop", "laptop buying guide", "laptop for college", "laptop for students India"]
-keywords = ["how to choose a laptop for students", "best laptop specifications for students", "student laptop buying guide India"]
+keywords = ["best laptop specs for students in India", "how to choose a laptop for students", "best laptop specifications for students", "student laptop buying guide India"]
 featured = true
 ShowToc = true
 ShowReadingTime = true
@@ -19,7 +19,7 @@ alt = "Laptop and notebook on a student’s desk"
 
 +++
 
-Buying a laptop for school or college is a big decision. You may use it for online classes, assignments, presentations, research, coding, design projects, video editing and internships. The tricky part is that **the best laptop for one student can be the wrong laptop for another**.
+For notes, browser tabs and online classes, **8GB RAM and an SSD can be enough**. For programming tools, heavier multitasking or a laptop you want to keep through college, **16GB is the safer starting point**. Before comparing processors, check the software your course actually requires.
 
 A commerce student writing reports does not need the same hardware as an engineering student running CAD software. A design student may care more about display quality, while someone who travels to college every day may value low weight and battery life.
 
