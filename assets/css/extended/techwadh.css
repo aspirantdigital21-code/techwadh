@@ -1010,24 +1010,31 @@ html {
 }
 .tw-trending-items a:hover { text-decoration: underline; }
 .tw-trending-items a:focus-visible { outline: 2px solid #fff; outline-offset: -2px; }
-.tw-topics-hint { display: none; }
-
 @media (max-width: 600px) {
-  .tw-topics-hint:not([hidden]) {
+  .tw-trending-bar {
     display: grid;
-    place-items: center;
-    flex: 0 0 44px;
-    min-height: 44px;
-    border-radius: 6px;
-    color: inherit;
-    font-size: 1.15rem;
-    line-height: 1;
-    cursor: pointer;
+    grid-template-columns: max-content minmax(0, 1fr);
+    align-items: start;
+    gap: 8px;
+    padding: 4px 12px;
   }
 
-  .tw-topics-hint:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: -2px;
+  .tw-trending-label { align-self: center; }
+
+  .tw-trending-items {
+    flex-wrap: wrap;
+    gap: 0 8px;
+    overflow: visible;
+  }
+
+  .tw-trending-items a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 3px 4px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
   }
 }
 
