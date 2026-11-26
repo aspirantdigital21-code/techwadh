@@ -37,9 +37,15 @@ async function loadComments() {
   comments.hidden = false;
 }
 
+form.addEventListener("invalid", event => {
+  const contact = event.target.closest(".tw-comment-contact");
+  if (contact) contact.open = true;
+}, true);
+
 form.addEventListener("submit", async event => {
   event.preventDefault();
   const button = form.querySelector("button");
+  const contact = form.querySelector(".tw-comment-contact");
   button.disabled = true;
   status.textContent = local("Sending…", "भेज रहे हैं…");
   try {
@@ -54,6 +60,7 @@ form.addEventListener("submit", async event => {
       status.textContent = local("Check your name, comment and any contact details entered.", "नाम, टिप्पणी और दिए गए संपर्क विवरण जाँचें।");
     } else if (response.status === 201) {
       form.reset();
+      contact.open = false;
       status.textContent = local("Comment received. It will appear after approval.", "टिप्पणी मिल गई है। मंज़ूरी के बाद यह यहाँ दिखेगी।");
     } else {
       throw new Error("Submission failed");

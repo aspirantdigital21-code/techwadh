@@ -8,8 +8,8 @@
   <h2 id="article-share-title">{{ cond $hi "यह लेख शेयर करें" "Share this article" }}</h2>
   <div class="tw-share-actions">
     <a class="tw-share-button tw-share-whatsapp" target="_blank" rel="noopener noreferrer"
-      href="https://wa.me/?text={{ printf "%s\n%s" $title $url }}">WhatsApp</a>
-    <button class="tw-share-button" type="button" data-copy-link hidden>{{ cond $hi "लिंक कॉपी करें" "Copy link" }}</button>
+      href="https://wa.me/?text={{ printf "%s\n%s" $title $url }}"><span aria-hidden="true">↗</span> WhatsApp</a>
+    <button class="tw-share-button" type="button" data-copy-link hidden><span aria-hidden="true">⧉</span> {{ cond $hi "लिंक कॉपी करें" "Copy link" }}</button>
     <details class="tw-share-options">
       <summary class="tw-share-button">{{ cond $hi "और विकल्प" "More options" }}</summary>
       <ul>

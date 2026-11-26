@@ -1,17 +1,21 @@
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-{{- if and (gt (len $pages) 1) (in $pages . ) }}
-<nav class="paginav">
-  {{- with $pages.Next . }}
-  <a class="prev" href="{{ .Permalink }}">
-    <span class="title">« {{ i18n "prev_page" }}</span>
-    <span>{{- .Name -}}</span>
-  </a>
-  {{- end }}
-  {{- with $pages.Prev . }}
-  <a class="next" href="{{ .Permalink }}">
-    <span class="title">{{ i18n "next_page" }} »</span>
-    <span>{{- .Name -}}</span>
-  </a>
+{{- if and (gt (len $pages) 1) (in $pages .) }}
+{{- $hi := eq .Language.Lang "hi" }}
+<nav class="tw-article-nav" aria-label="{{ cond $hi "पिछले और अगले लेख" "Previous and next articles" }}">
+  {{- range slice
+      (dict "page" ($pages.Next .) "label" (cond $hi "पिछला लेख" "Previous article") "arrow" "←" "rel" "prev")
+      (dict "page" ($pages.Prev .) "label" (cond $hi "अगला लेख" "Next article") "arrow" "→" "rel" "next") }}
+    {{- if .page }}
+    <a class="tw-article-nav-card" rel="{{ .rel }}" href="{{ .page.RelPermalink }}">
+      <div class="tw-article-nav-copy">
+        <span class="tw-article-nav-label"><span aria-hidden="true">{{ .arrow }}</span> {{ .label }}</span>
+        <strong>{{ .page.LinkTitle }}</strong>
+      </div>
+      {{- if .page.Params.cover.image }}
+      <span class="tw-article-nav-image">{{ partial "home-article-cover.html" (dict "page" .page "size" "thumb" "priority" false) }}</span>
+      {{- end }}
+    </a>
+    {{- end }}
   {{- end }}
 </nav>
 {{- end }}

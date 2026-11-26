@@ -4,21 +4,25 @@
   <div data-comment-list></div>
   <form class="tw-comment-form" method="post">
     <h3>{{ cond $hi "अपनी टिप्पणी लिखें" "Leave a comment" }}</h3>
-    <p>{{ cond $hi "आपकी टिप्पणी मंज़ूरी के बाद प्रकाशित होगी। ईमेल और मोबाइल नंबर सिर्फ़ संपादकीय टीम देख सकती है।" "Comments appear after approval. Only the editorial team can see your email and mobile number." }}</p>
-    <div class="tw-comment-fields">
-      <label>{{ cond $hi "नाम या निकनेम" "Name or nickname" }}
-        <input name="name" autocomplete="nickname" maxlength="60" required>
-      </label>
-      <label>{{ cond $hi "ईमेल (वैकल्पिक)" "Email (optional)" }}
-        <input name="email" type="email" autocomplete="email" maxlength="254" placeholder="{{ cond $hi "वैकल्पिक" "Optional" }}">
-      </label>
-      <label>{{ cond $hi "मोबाइल नंबर (वैकल्पिक)" "Mobile number (optional)" }}
-        <input name="phone" type="tel" autocomplete="tel" maxlength="25" placeholder="{{ cond $hi "वैकल्पिक" "Optional" }}">
-      </label>
-    </div>
+    <p class="tw-comment-note">{{ cond $hi "टिप्पणियाँ मंज़ूरी के बाद प्रकाशित होती हैं।" "Comments appear after moderation." }}</p>
+    <label>{{ cond $hi "नाम या निकनेम" "Name or nickname" }}
+      <input name="name" autocomplete="nickname" maxlength="60" required>
+    </label>
     <label>{{ cond $hi "टिप्पणी" "Comment" }}
       <textarea name="body" maxlength="1500" rows="4" required></textarea>
     </label>
+    <details class="tw-comment-contact">
+      <summary>{{ cond $hi "संपर्क जानकारी जोड़ें (वैकल्पिक)" "Add contact details (optional)" }}</summary>
+      <p class="tw-comment-note">{{ cond $hi "ये जानकारी सिर्फ़ संपादकीय टीम देख सकती है।" "Only the editorial team can see these details." }}</p>
+      <div class="tw-comment-fields">
+        <label>{{ cond $hi "ईमेल (वैकल्पिक)" "Email (optional)" }}
+          <input name="email" type="email" autocomplete="email" maxlength="254">
+        </label>
+        <label>{{ cond $hi "मोबाइल नंबर (वैकल्पिक)" "Mobile number (optional)" }}
+          <input name="phone" type="tel" autocomplete="tel" maxlength="25">
+        </label>
+      </div>
+    </details>
     <button class="tw-comment-submit" type="submit">{{ cond $hi "टिप्पणी भेजें" "Submit comment" }}</button>
     <p role="status" data-comment-status></p>
   </form>
