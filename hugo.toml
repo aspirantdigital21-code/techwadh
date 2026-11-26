@@ -32,7 +32,7 @@ defaultContentLanguageInSubdir = false
 [params]
   images = ["images/techwadh-share.jpg"]
   author = "TechWadh Editorial Team"
-  defaultTheme = "dark"
+  defaultTheme = "light"
   ShowReadingTime = true
   ShowToc = true
   ShowBreadCrumbs = true
