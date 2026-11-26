@@ -41,21 +41,22 @@ function add(parent, tag, text) {
 
 function render(entry, title) {
   const card = add(items, "article", "");
-  const heading = add(card, "h2", "");
-  const link = add(heading, "a", title || entry.article);
-  link.href = entry.article;
-
   const details = add(card, "dl", "");
   details.className = "comment-details";
   for (const [label, value] of [
-    ["Status", entry.status],
-    ["Name or nickname", entry.name],
-    ["Comment", entry.body],
-    ["Email (private)", entry.email || "Not provided or no longer saved"],
-    ["Mobile number (private)", entry.phone || "Not provided or no longer saved"],
+    ["Name:", entry.name],
+    ["Article link:", title || entry.article],
+    ["Comment:", entry.body],
+    ["Private email:", entry.email || "Not provided or no longer saved"],
+    ["Private mobile:", entry.phone || "Not provided or no longer saved"],
   ]) {
     add(details, "dt", label);
-    add(details, "dd", value);
+    const field = add(details, "dd", "");
+    if (label === "Article link:") {
+      add(field, "a", value).href = entry.article;
+    } else {
+      field.textContent = value;
+    }
   }
 
   let reply;
