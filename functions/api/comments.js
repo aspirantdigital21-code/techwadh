@@ -99,8 +99,8 @@ export async function onRequest({ request, env }) {
       if (!/^[a-f0-9-]{36}$/.test(id) || reply.length > replyLimit) return json({ error: "invalid" }, 400);
       const queries = {
         approve: ["UPDATE comments SET status = 'approved' WHERE id = ?", id],
-        reject: ["UPDATE comments SET status = 'rejected', email = '', phone = '' WHERE id = ?", id],
-        spam: ["UPDATE comments SET status = 'spam', email = '', phone = '' WHERE id = ?", id],
+        reject: ["UPDATE comments SET status = 'rejected' WHERE id = ?", id],
+        spam: ["UPDATE comments SET status = 'spam' WHERE id = ?", id],
         remove: ["DELETE FROM comments WHERE id = ?", id],
         reply: ["UPDATE comments SET reply = ? WHERE id = ? AND status = 'approved'", reply, id],
       };

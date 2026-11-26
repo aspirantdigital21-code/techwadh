@@ -5,6 +5,21 @@ const items = document.querySelector("#items");
 const message = document.querySelector("#message");
 let token = "";
 let requestVersion = 0;
+const articleIndexes = new Map();
+
+async function loadArticleTitles(path) {
+  if (articleIndexes.has(path)) return articleIndexes.get(path);
+  try {
+    const response = await fetch(path);
+    if (!response.ok) return new Map();
+    const articles = await response.json();
+    const titles = new Map(articles.map(article => [new URL(article.permalink).pathname, article.title]));
+    articleIndexes.set(path, titles);
+    return titles;
+  } catch {
+    return new Map();
+  }
+}
 
 async function api(currentToken, action) {
   return fetch("/api/comments?admin=1&status=" + encodeURIComponent(filter.value), {
@@ -24,14 +39,25 @@ function add(parent, tag, text) {
   return node;
 }
 
-function render(entry) {
+function render(entry, title) {
   const card = add(items, "article", "");
-  add(card, "strong", entry.name);
-  const link = add(card, "a", entry.article);
+  const heading = add(card, "h2", "");
+  const link = add(heading, "a", title || entry.article);
   link.href = entry.article;
-  add(card, "p", entry.body);
-  if (entry.email) add(card, "p", "Private email: " + entry.email);
-  if (entry.phone) add(card, "p", "Private mobile: " + entry.phone);
+
+  const details = add(card, "dl", "");
+  details.className = "comment-details";
+  for (const [label, value] of [
+    ["Status", entry.status],
+    ["Name or nickname", entry.name],
+    ["Comment", entry.body],
+    ["Email (private)", entry.email || "Not provided or no longer saved"],
+    ["Mobile number (private)", entry.phone || "Not provided or no longer saved"],
+  ]) {
+    add(details, "dt", label);
+    add(details, "dd", value);
+  }
+
   let reply;
   if (entry.status === "approved") {
     const label = add(card, "label", "TechWadh reply");
@@ -78,11 +104,16 @@ async function refresh() {
       return;
     }
     const { comments } = await response.json();
+    const paths = [...new Set(comments.map(entry => entry.article.startsWith("/hi/") ? "/hi/index.json" : "/index.json"))];
+    const titles = new Map();
+    for (const index of await Promise.all(paths.map(loadArticleTitles))) {
+      for (const [path, title] of index) titles.set(path, title);
+    }
     if (version !== requestVersion) return;
     access.hidden = true;
     queue.hidden = false;
     items.replaceChildren();
-    for (const entry of comments) render(entry);
+    for (const entry of comments) render(entry, titles.get(entry.article));
     message.textContent = comments.length ? "" : "No comments in this view.";
   } catch {
     if (version === requestVersion) message.textContent = "Could not load the comment queue.";

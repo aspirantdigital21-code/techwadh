@@ -14,4 +14,7 @@ button:disabled { opacity: .55; }
 a { color: #f5c49e; }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 [hidden] { display: none !important; }
-article > a { display: block; }
+article h2 { margin: 0 0 14px; font-size: 1.12rem; }
+.comment-details { margin: 0 0 16px; }
+.comment-details dt { margin-top: 8px; font-size: .85rem; font-weight: 700; color: #c2d2c8; }
+.comment-details dd { margin: 0; white-space: pre-wrap; }

@@ -99,4 +99,4 @@ The bilingual post template displays comments when the same-origin Pages Functio
 2. In the Cloudflare Pages project's **Settings → Bindings**, add the production D1 binding `COMMENTS_DB`. Add a randomly generated, high-entropy `COMMENTS_ADMIN_TOKEN` as an encrypted production secret under **Variables and Secrets**. Keep the token out of Git.
 3. Redeploy Pages. Open `/moderation/` and unlock it with the token. Submit a test comment from an article, confirm it is pending, and then approve it. Production and preview should use separate databases and tokens if comments are enabled on both.
 
-Only approved comments and editorial replies are public. Optional email and phone fields are visible in the moderation dashboard. Marking an item as spam or rejecting it clears these two fields. Removing an item deletes its record.
+Only approved comments and editorial replies are public. Optional email and phone fields are visible in the moderation dashboard. Changing a comment’s moderation status preserves these fields in the private dashboard. Removing an item deletes its record.
