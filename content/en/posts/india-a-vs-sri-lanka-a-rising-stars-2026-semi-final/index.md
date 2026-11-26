@@ -11,6 +11,7 @@ tags = ["Cricket", "India A", "Sri Lanka A", "Asia Cup Rising Stars 2026"]
 keywords = ["India A vs Sri Lanka A scorecard","Asia Cup Rising Stars 2026 semi-final","Sri Lanka A 318 chase","Sineth Jayawardena 105"]
 featured = true
 ShowToc = true
+matchQuickLinks = ["india-a-batting-scorecard", "the-decisive-difference", "india-a-vs-sri-lanka-a-semi-final-result"]
 ShowReadingTime = true
 
 [cover]

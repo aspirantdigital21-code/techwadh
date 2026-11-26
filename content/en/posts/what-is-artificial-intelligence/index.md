@@ -73,6 +73,12 @@ Depending on the system, this content may include:
 
 AI chatbots and image-generation tools are popular examples of generative AI applications.
 
+| Technique | What it does | Everyday example |
+|---|---|---|
+| Machine learning | Learns patterns from examples to classify or predict | Flagging spam emails |
+| Deep learning | Uses multi-layer neural networks to learn representations | Recognising objects in photos |
+| Generative AI | Produces new text, images or other output from learned patterns | Drafting a message from a prompt |
+
 ## Everyday Uses of Artificial Intelligence
 
 You may already use AI without noticing it.

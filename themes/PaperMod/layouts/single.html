@@ -1,6 +1,7 @@
 {{- define "main" }}
 
-{{- $articleShare := and (eq .Section "posts") (ne .Params.disableShare true) -}}
+{{- $isArticle := eq .Section "posts" -}}
+{{- $articleShare := and $isArticle (ne .Params.disableShare true) -}}
 <article class="post-single">
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
@@ -36,12 +37,14 @@
   </header>
   {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
   {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
-  {{- if (.Param "ShowToc") }}
+  {{- if $isArticle }}
+  {{- partial "article-reading-tools.html" . }}
+  {{- else if (.Param "ShowToc") }}
   {{- partial "toc.html" . }}
   {{- end }}
 
   {{- if .Content }}
-  <div class="post-content md-content">
+  <div class="post-content md-content"{{ if $isArticle }} id="article-body"{{ end }}>
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
     {{- else }}{{ .Content }}{{ end }}

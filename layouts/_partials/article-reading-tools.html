@@ -1,0 +1,22 @@
+{{- $hi := eq .Language.Lang "hi" -}}
+<progress class="tw-reading-progress" value="0" max="100" aria-label="{{ cond $hi "लेख पढ़ने की प्रगति" "Article reading progress" }}" hidden></progress>
+{{- if or .Params.matchQuickLinks .Fragments.Identifiers }}
+<div class="tw-reading-tools">
+  {{- if .Params.matchQuickLinks }}
+  <nav class="tw-reading-shortcuts" aria-label="{{ cond $hi "मैच रिपोर्ट के प्रमुख सेक्शन" "Match report shortcuts" }}">
+    <a href="#{{ index .Params.matchQuickLinks 0 }}">{{ cond $hi "स्कोरकार्ड" "Scorecard" }}</a>
+    <a href="#{{ index .Params.matchQuickLinks 1 }}">{{ cond $hi "मैच का टर्निंग पॉइंट" "Turning point" }}</a>
+    <a href="#{{ index .Params.matchQuickLinks 2 }}">{{ cond $hi "पूरी रिपोर्ट" "Full report" }}</a>
+  </nav>
+  {{- end }}
+  {{- if .Fragments.Identifiers }}
+  <details class="tw-reading-toc"{{ if (.Param "TocOpen") }} open{{ end }}>
+    <summary>{{ cond $hi "इस लेख में" "In this article" }}</summary>
+    {{ .TableOfContents }}
+  </details>
+  {{- end }}
+</div>
+{{- end }}
+{{- with resources.Get "js/article-reading.js" | minify | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{- end }}

@@ -11,6 +11,7 @@ tags = ["Cricket", "India A", "Sri Lanka A", "Asia Cup Rising Stars 2026"]
 keywords = ["इंडिया A बनाम श्रीलंका A स्कोरकार्ड","राइज़िंग स्टार्स एशिया कप 2026 सेमीफ़ाइनल","वैभव सूर्यवंशी 40 रन","सिनेथ जयवर्धने 105"]
 featured = true
 ShowToc = true
+matchQuickLinks = ["इडय-a-क-बललबज-सकरकरड", "नतज-पर-सबस-बड-असर-कसक-पड", "इडय-a-बनम-शरलक-a-समफइनल-क-नतज"]
 ShowReadingTime = true
 
 [cover]
