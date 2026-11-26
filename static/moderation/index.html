@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Comment moderation | TechWadh</title>
+<link rel="stylesheet" href="/moderation/style.css">
+<script defer src="/moderation/moderation.js"></script>
+</head>
+<body>
+<main>
+  <h1>Comment moderation</h1>
+  <form id="access" method="post">
+    <label>Moderation token <input name="token" type="password" required maxlength="430" autocomplete="off"></label>
+    <button>Unlock</button>
+  </form>
+  <section hidden id="queue" aria-label="Comment queue">
+    <div class="toolbar">
+      <label>Status
+        <select id="filter">
+          <option value="pending">Pending</option>
+          <option value="approved">Approved</option>
+          <option value="rejected">Rejected</option>
+          <option value="spam">Spam</option>
+        </select>
+      </label>
+      <button id="refresh" type="button">Refresh</button>
+      <button id="lock" type="button">Lock</button>
+    </div>
+    <div id="items"></div>
+  </section>
+  <p id="message" role="status"></p>
+</main>
+</body>
+</html>

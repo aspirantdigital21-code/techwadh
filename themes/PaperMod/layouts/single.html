@@ -72,6 +72,7 @@
       {{- end }}
     </ul>
     {{- if $articleShare }}{{ partial "article-share.html" . }}{{ end }}
+    {{- if eq .Section "posts" }}{{ partial "article-comments.html" . }}{{ end }}
     {{- if (.Param "ShowPostNavLinks") }}
     {{- partial "post_nav_links.html" . }}
     {{- end }}

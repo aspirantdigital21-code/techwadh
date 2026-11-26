@@ -17,6 +17,8 @@ When you contact us by email, we may receive your email address and any informat
 
 Our website hosting or security providers may automatically process technical information such as IP addresses, browser details and request logs to operate and protect the website.
 
+**Article comments.** If you leave a comment, we store your display name and comment. An approved comment may appear publicly with its date. The email address and mobile number fields are optional and visible only to authorized moderators, who may use them to follow up about your comment. We use a derived identifier to limit repeat submissions. You can contact us to ask about removal of your comment or contact details.
+
 ## 2. Cookies and Similar Technologies
 
 TechWadh or its service providers may use essential cookies or similar technologies for website functionality, security and performance.
