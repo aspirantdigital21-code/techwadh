@@ -4,6 +4,11 @@
     {{- $meta = $meta | append (printf "<span title='%s'>%s</span>" (.Date | time.Format "2006-01-02T15:04:05-07:00") (.Date | time.Format (default ":date_long" site.Params.DateFormat))) }}
 {{- end }}
 
+{{- if and (eq .Section "posts") (not .Date.IsZero) (gt (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02")) -}}
+    {{- $updated := cond (eq .Language.Lang "hi") "अपडेट" "Updated" }}
+    {{- $meta = $meta | append (printf "<span>%s <time datetime='%s'>%s</time></span>" $updated (.Lastmod.Format "2006-01-02") (.Lastmod | time.Format (default ":date_long" site.Params.DateFormat))) }}
+{{- end }}
+
 {{- if (.Param "ShowReadingTime") -}}
     {{- $meta = $meta | append (printf "<span>%s</span>" (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime))) }}
 {{- end }}

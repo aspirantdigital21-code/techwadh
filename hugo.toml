@@ -16,6 +16,19 @@ defaultContentLanguageInSubdir = false
 [permalinks]
   posts = "/:slug/"
 
+[related]
+  includeNewer = true
+  threshold = 60
+  toLower = true
+
+  [[related.indices]]
+    name = "categories"
+    weight = 100
+
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+
 [params]
   images = ["images/techwadh-share.jpg"]
   author = "TechWadh Editorial Team"

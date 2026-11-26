@@ -51,6 +51,20 @@
   {{- partial "extend_post_content.html" . }}
 
   <footer class="post-footer">
+    {{- if eq .Section "posts" }}
+      {{- $posts := where site.RegularPages "Section" "posts" }}
+      {{- $posts = where $posts "Params.hidden" "!=" true }}
+      {{- with first 3 ($posts.Related .) }}
+      <nav class="post-content" aria-label="{{ cond (eq $.Language.Lang "hi") "संबंधित लेख" "Related articles" }}">
+        <h2>{{ cond (eq $.Language.Lang "hi") "संबंधित लेख" "Related articles" }}</h2>
+        <ul>
+          {{- range . }}
+          <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+          {{- end }}
+        </ul>
+      </nav>
+      {{- end }}
+    {{- end }}
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
     <ul class="post-tags">
       {{- range ($.GetTerms $tags) }}

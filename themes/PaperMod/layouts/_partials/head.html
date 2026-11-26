@@ -10,7 +10,33 @@
 {{- end }}
 
 {{- /* Title */}}
-<title>{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ site.Title }}</title>
+{{- $seoHi := eq site.Language.Lang "hi" }}
+{{- $seoTitle := .Title }}
+{{- $seoDescription := .Description }}
+{{- if eq .Kind "taxonomy" }}
+    {{- if eq .Data.Plural "categories" }}
+        {{- $seoTitle = cond $seoHi "विषय और कैटेगरी" "Article Categories" }}
+        {{- $seoDescription = cond $seoHi "TechWadh के हिंदी लेख कैटेगरी के अनुसार देखें।" "Browse TechWadh articles by category and find guides on the topics you follow." }}
+    {{- else if eq .Data.Plural "tags" }}
+        {{- $seoTitle = cond $seoHi "लेखों के टैग" "Article Tags" }}
+        {{- $seoDescription = cond $seoHi "TechWadh के हिंदी लेख टैग के अनुसार खोजें और किसी खास विषय पर प्रकाशित गाइड देखें।" "Find TechWadh articles by tag and browse guides on specific subjects." }}
+    {{- end }}
+{{- else if and .IsSection (eq .Section "posts") }}
+    {{- $seoTitle = cond $seoHi "सभी हिंदी लेख" "All English Articles" }}
+    {{- $seoDescription = $seoDescription | default (cond $seoHi "TechWadh पर प्रकाशित सभी हिंदी लेख और गाइड देखें।" "Browse all English articles and guides published by TechWadh.") }}
+{{- else if eq .Kind "term" }}
+    {{- $isCategory := eq .Data.Plural "categories" }}
+    {{- $qualifier := cond $isCategory (cond $seoHi "कैटेगरी" "Category") (cond $seoHi "टैग" "Tag") }}
+    {{- $seoTitle = printf "%s (%s)" .Title $qualifier }}
+    {{- if not $seoDescription }}
+        {{- if $isCategory }}
+            {{- $seoDescription = cond $seoHi (printf "%s कैटेगरी में TechWadh की हिंदी गाइड, लेख और अपडेट देखें।" .Title) (printf "Browse TechWadh's %s category for guides, articles and updates." .Title) }}
+        {{- else }}
+            {{- $seoDescription = cond $seoHi (printf "TechWadh पर %s टैग वाले हिंदी लेख और गाइड देखें।" .Title) (printf "Find TechWadh's articles and guides tagged %s." .Title) }}
+        {{- end }}
+    {{- end }}
+{{- end }}
+<title>{{ with $seoTitle }}{{ if ne . site.Title }}{{ . }} | {{ end }}{{ end }}{{ site.Title }}</title>
 
 {{- /* Meta */}}
 {{- if .IsHome }}
@@ -20,7 +46,7 @@
     {{- range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- else }}
     {{- range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- end -}}">
 {{- end }}
-<meta name="description" content="{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
+<meta name="description" content="{{- with $seoDescription }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
     {{- .Summary | default (printf "%s - %s" .Title  site.Title) }}{{- else }}
     {{- with site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
 <meta name="author" content="{{ (partial "author.html" . ) }}">

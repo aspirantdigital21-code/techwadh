@@ -1,7 +1,7 @@
 
 +++
-title = "Technology of Patwadh Kautuk"
-description = "Rooted in Patwadh Kautuk. Connected to the World."
+title = "Technology Guides in English"
+description = "Explore TechWadh’s English guides on AI tools, smartphones, laptops and everyday technology. Browse comparisons, explainers and buying guides."
 +++
 
 # Welcome to TechWadh
