@@ -38,7 +38,7 @@
         <a class="tw-card-link" href="{{ $page.RelPermalink }}">
           {{- with $page.Params.cover.image }}
           <div class="tw-card-image">
-            {{ partial "home-article-cover.html" (dict "page" $page "size" "feature" "priority" (eq $i 0)) }}
+            {{ partial "home-article-cover.html" (dict "page" $page "size" "feature" "priority" (eq $i 0) "singleFeature" (eq (len $featured) 1)) }}
           </div>
           {{- else }}
           <div class="tw-card-art">

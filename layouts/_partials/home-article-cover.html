@@ -9,23 +9,31 @@
 {{- $sizes := "(max-width: 520px) 64px, 96px" -}}
 {{- $ratio := 0.75 -}}
 {{- $alt := "" -}}
+{{- $quality := 72 -}}
 {{- if eq .size "feature" -}}
-  {{- $widths = slice 360 640 960 -}}
-  {{- $sizes = "(max-width: 760px) calc(100vw - 56px), (max-width: 1160px) 50vw, 600px" -}}
+  {{- $widths = slice 360 640 800 960 -}}
+  {{- $sizes = "(max-width: 760px) calc(100vw - 64px), (max-width: 1160px) 50vw, 600px" -}}
   {{- $ratio = 0.5625 -}}
+  {{- if .singleFeature -}}
+    {{- $sizes = "(max-width: 760px) calc(100vw - 64px), 758px" -}}
+  {{- end -}}
 {{- else if eq .size "article" -}}
   {{- $widths = slice 360 640 960 1200 -}}
   {{- $sizes = "(max-width: 520px) calc(100vw - 60px), (max-width: 1160px) calc(100vw - 110px), 1050px" -}}
   {{- $ratio = 0.525 -}}
+  {{- $quality = 78 -}}
   {{- $alt = $page.Params.cover.alt | default $page.Params.cover.caption | default "" | plainify -}}
 {{- end -}}
 {{- $loading := cond .priority "eager" "lazy" -}}
+{{- if not .priority -}}
+  {{- $sizes = printf "auto, %s" $sizes -}}
+{{- end -}}
 {{- with $asset -}}
   {{- $variants := slice -}}
   {{- $fallback := "" -}}
   {{- range $i, $width := $widths -}}
     {{- $height := int (math.Round (mul $width $ratio)) -}}
-    {{- $variant := $asset.Fill (printf "%dx%d Center webp q78" $width $height) -}}
+    {{- $variant := $asset.Fill (printf "%dx%d Center webp q%d" $width $height $quality) -}}
     {{- if eq $i 0 }}{{ $fallback = $variant.RelPermalink }}{{ end -}}
     {{- $variants = $variants | append (printf "%s %dw" $variant.RelPermalink $width) -}}
   {{- end -}}
