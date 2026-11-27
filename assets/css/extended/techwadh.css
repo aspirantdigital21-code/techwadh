@@ -57,13 +57,18 @@ a:hover { color: var(--tw-blue); }
 :focus-visible { outline: 3px solid var(--tw-blue); outline-offset: 3px; border-radius: 7px; }
 /* TechWadh Premium Scrollbar */
 html {
-  scrollbar-width: thin;
+  scrollbar-width: auto;
   scrollbar-color: var(--tw-blue) var(--tw-soft);
 }
 
 ::-webkit-scrollbar {
   width: 9px;
   height: 9px;
+}
+
+@supports selector(html::-webkit-scrollbar) {
+  html { scrollbar-color: auto; }
+  html::-webkit-scrollbar { width: 12px; }
 }
 
 ::-webkit-scrollbar-track {

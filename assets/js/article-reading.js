@@ -1,17 +1,15 @@
 (() => {
   const progress = document.querySelector(".tw-reading-progress");
-  const article = document.getElementById("article-body");
-  if (!progress || !article) return;
+  const scroller = document.scrollingElement;
+  if (!progress || !scroller) return;
 
   let frame = 0;
   function update() {
-    const { top, height } = article.getBoundingClientRect();
-    const viewport = document.documentElement.clientHeight;
-    // Give short articles a reading interval as soon as they enter the viewport.
-    const start = height <= viewport ? viewport : 0;
-    const distance = Math.max(1, height - viewport + start);
-    const percent = Math.min(100, Math.max(0, (start - top) / distance * 100));
-    progress.value = percent;
+    const distance = scroller.scrollHeight - scroller.clientHeight;
+    const offset = Math.max(0, scroller.scrollTop);
+    // Scroll offsets can be fractional while scrollHeight is rounded.
+    const atBottom = distance > 0 && distance - offset <= 0.5;
+    progress.value = atBottom ? 100 : offset / Math.max(1, distance) * 100;
     frame = 0;
   }
 
@@ -24,5 +22,5 @@
   window.addEventListener("scroll", schedule, { passive: true });
   window.addEventListener("resize", schedule);
   window.addEventListener("load", schedule, { once: true });
-  if ("ResizeObserver" in window) new ResizeObserver(schedule).observe(article);
+  if ("ResizeObserver" in window) new ResizeObserver(schedule).observe(document.body);
 })();
