@@ -80,11 +80,12 @@
                 <span id="tw-mobile-time"></span>
             </div>
 
+            {{- partial "channel-header.html" (dict "mode" "header" "page" .) }}
+
             <!-- Theme and language controls -->
             {{- $lsenabled := (or (not site.Params.disableThemeToggle) (and (not site.Params.disableLangToggle) (hugo.IsMultilingual))) }}
             {{- if $lsenabled }}
             <div class="logo-switches">
-                {{- partial "channel-links.html" (dict "mode" "header" "page" .) }}
                 {{- if not site.Params.disableThemeToggle }}
                 <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -131,6 +132,7 @@
 
         </div>
     </nav>
+    {{- partial "channel-header.html" (dict "mode" "mobile-header" "page" .) }}
 </header>
 
 <script>

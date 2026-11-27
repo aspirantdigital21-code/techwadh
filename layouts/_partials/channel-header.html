@@ -1,0 +1,6 @@
+{{- if or site.Params.social.telegram site.Params.social.whatsapp }}
+<div class="tw-channel-header tw-channel-header--{{ .mode }}">
+  <span>{{ cond (eq .page.Language.Lang "hi") "हमसे जुड़ें" "Join us on" }}</span>
+  {{- partial "channel-links.html" . }}
+</div>
+{{- end }}

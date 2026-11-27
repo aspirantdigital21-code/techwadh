@@ -1,0 +1,8 @@
+{{- if or site.Params.social.telegram site.Params.social.whatsapp }}
+{{- $hi := eq .page.Language.Lang "hi" }}
+<section class="tw-follow-cta tw-follow-cta--{{ .placement }}" aria-labelledby="tw-follow-{{ .placement }}">
+  <h2 id="tw-follow-{{ .placement }}">{{ cond $hi "TechWadh के अपडेट फ़ोन पर पाएँ" "Get TechWadh updates on your phone" }}</h2>
+  <p>{{ cond $hi "AI टूल्स, खरीदारी गाइड और भर्ती की खबरें।" "AI tools, buying guides and job updates." }}</p>
+  {{- partial "channel-links.html" (dict "mode" "article" "page" .page) }}
+</section>
+{{- end }}
