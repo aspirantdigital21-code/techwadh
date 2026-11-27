@@ -41,6 +41,10 @@ defaultContentLanguageInSubdir = false
   ShowAllPagesInArchive = true
   displayFullLangName = true
   
+[params.social]
+  telegram = "https://t.me/techwadh"
+  whatsapp = "https://whatsapp.com/channel/0029VbCDEGC1yT229aGRyw1T"
+
 [params.fuseOpts]
   isCaseSensitive = false
   shouldSort = true

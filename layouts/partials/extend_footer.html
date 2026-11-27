@@ -1,3 +1,8 @@
+{{- if or site.Params.social.telegram site.Params.social.whatsapp }}
+<div class="tw-follow-footer">
+  {{- partial "channel-links.html" (dict "mode" "footer" "page" .) }}
+</div>
+{{- end }}
 <div class="footer-links">
     <a href="{{ "about/" | absLangURL }}">About</a>
     <span> · </span>
