@@ -109,20 +109,26 @@
 }
 
 .tw-reading-progress {
+  --tw-progress-fill: #087e75;
+  --tw-progress-track: #deebe5;
   appearance: none;
   position: fixed;
   z-index: 1000;
   inset: 0 0 auto;
   width: 100%;
-  height: 3px;
+  height: 6px;
   border: 0;
-  background: transparent;
-  color: var(--tw-editorial-accent);
+  background: var(--tw-progress-track);
+  color: var(--tw-progress-fill);
   pointer-events: none;
 }
-.tw-reading-progress::-webkit-progress-bar { background: transparent; }
-.tw-reading-progress::-webkit-progress-value { background: var(--tw-editorial-accent); }
-.tw-reading-progress::-moz-progress-bar { background: var(--tw-editorial-accent); }
+:root[data-theme="dark"] .tw-reading-progress {
+  --tw-progress-fill: #63ddc1;
+  --tw-progress-track: #243d36;
+}
+.tw-reading-progress::-webkit-progress-bar { background: var(--tw-progress-track); }
+.tw-reading-progress::-webkit-progress-value { background: var(--tw-progress-fill); }
+.tw-reading-progress::-moz-progress-bar { background: var(--tw-progress-fill); }
 
 .tw-reading-tools {
   display: grid;
