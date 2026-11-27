@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>n8n Workflow Lab</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:clamp(12px,4vw,24px);background:#102821;color:#f7f5ed;font:15px/1.45 system-ui}h1{margin:0;font-size:clamp(23px,5vw,36px)}p{margin:6px 0 15px;color:#c7d9d0}form{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));align-items:end;gap:10px}label{display:grid;gap:4px}select,input:not([type=checkbox]),button{width:100%;min-height:40px;font:inherit;padding:7px 9px;border-radius:8px;color:#fbfff9;background:#1c3c32;border:1px solid #85ab9a}button{cursor:pointer}.run{font-weight:bold;background:#ffcc94;color:#1b241e;border-color:transparent}.steps{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0 8px}.steps button{width:auto;min-height:34px;font-size:13px}.steps button[aria-pressed=true]{background:#a1e5c7;color:#102821}pre{padding:13px;border:1px solid #638777;background:#0a211a;border-radius:10px;color:#ffe1b9;min-height:110px;white-space:pre-wrap;overflow-wrap:anywhere}small{color:#c7d9d0}[hidden]{display:none!important}:focus-visible{outline:3px solid #ffcc94;outline-offset:2px}
+</style>
+<main><h1 id="heading"></h1><p id="intro"></p>
+<form><label><span id="mode-label"></span><select id="mode"><option value="manual"></option><option value="webhook"></option><option value="alert"></option></select></label>
+<label><span id="name-label"></span><input id="name" value="Rohit" maxlength="100"></label>
+<label id="status-field"><span id="status-label"></span><select id="status"><option>ready</option><option>draft</option></select></label>
+<label id="duplicate-field" hidden><span id="duplicate-label"></span><input type="checkbox" id="duplicate"></label>
+<button type="submit" class="run" id="run"></button></form>
+<div class="steps" id="steps"></div><pre id="output" role="status"></pre><small id="note"></small></main>
+<script>
+const hi = new URLSearchParams(location.search).get('lang') === 'hi' || location.hash === '#hi';
+const labels = hi
+  ? ['वर्कफ़्लो लैब','इनपुट बदलें, रन करें और किसी नोड पर टैप करके उसका JSON देखें।','वर्कफ़्लो','नाम या वीडियो टाइटल','स्टेटस','वीडियो ID पहले दर्ज है','रन करें','यह सिमुलेशन है। बाहर कोई API कॉल या संदेश नहीं जाता।','पहला ऑटोमेशन','Webhook','YouTube अलर्ट']
+  : ['Workflow lab','Change the input, run the workflow, and select a node to inspect its JSON.','Workflow','Name or video title','Status','Video ID already recorded','Run workflow','This simulation sends no API calls or messages.','First automation','Webhook','YouTube alert'];
+const byId = id => document.getElementById(id);
+document.documentElement.lang = hi ? 'hi' : 'en';
+['heading','intro','mode-label','name-label','status-label','duplicate-label','run','note'].forEach((id,i) => { byId(id).textContent=labels[i]; });
+Array.from(byId('mode').options).forEach((option,i) => { option.textContent=labels[i+8]; });
+function run() {
+  const mode=byId('mode').value, name=byId('name').value, status=byId('status').value;
+  const duplicate=byId('duplicate').checked, ready=status==='ready';
+  let trace;
+  if (mode==='alert') {
+    trace=[['RSS Feed Trigger',{id:'video-001',title:name}],['Check ID',{duplicate}],
+      duplicate ? ['Skip',{skipped:true,reason:'duplicate'}] : ['Telegram',{title:name,id:'video-001',simulated:true}]];
+  } else if (mode==='webhook' && !name.trim()) {
+    trace=[['Webhook',{body:{name,status}}],['Validate',{valid:false}],['Respond',{status:400,error:'name is required'}]];
+  } else {
+    trace=[mode==='webhook'?['Webhook',{body:{name,status}}]:['Manual Trigger',{}],
+      ['Edit Fields',{name,status}],['IF',{branch:ready?'true':'false'}],
+      [ready?'Prepare message':'Skip',{message:ready?'Ready to publish: '+name:'Skipped'}]];
+  }
+  const steps=byId('steps');
+  steps.replaceChildren();
+  function select(index) {
+    Array.from(steps.children).forEach((b,i)=>b.setAttribute('aria-pressed',String(i===index)));
+    byId('output').textContent=JSON.stringify(trace[index][1],null,2);
+  }
+  trace.forEach(([label],i)=>{
+    const button=document.createElement('button');
+    button.type='button';
+    button.textContent=label;
+    button.addEventListener('click',()=>select(i));
+    steps.append(button);
+  });
+  select(trace.length-1);
+}
+byId('mode').addEventListener('change',()=>{
+  const alert=byId('mode').value==='alert';
+  byId('status-field').hidden=alert;
+  byId('duplicate-field').hidden=!alert;
+  run();
+});
+document.querySelector('form').addEventListener('submit',event=>{event.preventDefault();run();});
+run();
+</script>
+</html>
